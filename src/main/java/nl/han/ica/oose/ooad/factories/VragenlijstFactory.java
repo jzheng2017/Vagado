@@ -7,7 +7,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class VragenlijstFactory {
+    private static VragenlijstFactory vragenlijstFactory;
 
+    private VragenlijstFactory(){
+        //singleton
+    }
+
+    public static VragenlijstFactory getInstance(){
+        if (vragenlijstFactory == null){
+            vragenlijstFactory = new VragenlijstFactory();
+        }
+        return vragenlijstFactory;
+    }
 
     public Vragenlijst maakVragenlijst(VragenlijstType type) {
         switch (type) {

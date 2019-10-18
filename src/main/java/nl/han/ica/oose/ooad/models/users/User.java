@@ -1,6 +1,7 @@
 package nl.han.ica.oose.ooad.models.users;
 
 import nl.han.ica.oose.ooad.models.vragen.Vragenlijst;
+import nl.han.ica.oose.ooad.models.vragen.VragenlijstCollection;
 
 import java.util.List;
 
@@ -10,7 +11,7 @@ public class User {
     private int saldo;
     private String username;
     private String password;
-    private List<Vragenlijst> vragenlijst;
+    private VragenlijstCollection vragenlijst;
 
 
     public User(int id, String username, String password) {
@@ -62,7 +63,7 @@ public class User {
         this.password = password;
     }
 
-    public List<Vragenlijst> getVragenlijst() {
+    public VragenlijstCollection getVragenlijst() {
         return vragenlijst;
     }
 
@@ -84,7 +85,7 @@ public class User {
         }
     }
 
-    public void setVragenlijst(List<Vragenlijst> vragenlijst) {
+    public void setVragenlijst(VragenlijstCollection vragenlijst) {
         this.vragenlijst = vragenlijst;
     }
 }

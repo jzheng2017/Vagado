@@ -50,6 +50,10 @@ public class Vragenlijst {
         return vragen;
     }
 
+    public List<Vraag> getVragen(int aantal){
+        return vragen.getVragen(aantal);
+    }
+
     public List<Vraag> getVragen() {
         return vragen.getVragen();
     }

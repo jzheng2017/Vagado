@@ -7,7 +7,7 @@ import nl.han.ica.oose.ooad.models.vragen.OpenVraagAntwoord;
 import java.util.List;
 
 public class OpenVraagView {
-   private OpenVraag openVraag;
+    private OpenVraag openVraag;
 
 
     public OpenVraagView(OpenVraag openVraag) {
@@ -18,15 +18,15 @@ public class OpenVraagView {
         this.openVraag = openVraag;
     }
 
-    public void displayVraag(){
+    public void displayVraag() {
         System.out.println(openVraag);
     }
 
-    public void displayAntwoorden(){
-       List<OpenVraagAntwoord> antwoorden = openVraag.getAntwoorden();
+    public void displayAntwoorden() {
+        List<OpenVraagAntwoord> antwoorden = openVraag.getAntwoorden();
 
-       for (OpenVraagAntwoord antwoord : antwoorden){
-           System.out.println(antwoord);
-       }
+        for (int i = 1; i <= antwoorden.size(); i++) {
+            System.out.println(i + ". " + antwoorden.get(i - 1));
+        }
     }
 }

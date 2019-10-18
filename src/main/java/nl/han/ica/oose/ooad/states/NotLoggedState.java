@@ -5,6 +5,7 @@ import nl.han.ica.oose.ooad.controllers.LoginController;
 import nl.han.ica.oose.ooad.enums.ControllerType;
 
 public class NotLoggedState extends State {
+    private LoginController loginController = (LoginController) controllerManager.getController(ControllerType.Login);
 
     public NotLoggedState(StateMachine stateMachine) {
         super(stateMachine);
@@ -17,8 +18,7 @@ public class NotLoggedState extends State {
 
     @Override
     public void loop() {
-        currentController = controllerManager.getController(ControllerType.Login);
-        if (((LoginController) currentController).login("jiankai", "zheng")) {
+        if (loginController.login("jiankai", "zheng")) {
             exit();
             stateMachine.setCurrentState(new LoggedInState(stateMachine));
         } else {

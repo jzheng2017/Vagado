@@ -1,9 +1,6 @@
 package nl.han.ica.oose.ooad.factories;
 
-import nl.han.ica.oose.ooad.controllers.Controller;
-import nl.han.ica.oose.ooad.controllers.LoginController;
-import nl.han.ica.oose.ooad.controllers.RegisterController;
-import nl.han.ica.oose.ooad.controllers.WinkelController;
+import nl.han.ica.oose.ooad.controllers.*;
 import nl.han.ica.oose.ooad.enums.ControllerType;
 
 public class ControllerFactory {
@@ -16,6 +13,10 @@ public class ControllerFactory {
                 return new RegisterController();
             case Winkel:
                 return new WinkelController();
+            case Quiz:
+                return new QuizController();
+            case Vragenlijst:
+                return new VragenlijstController();
             default:
                 return null;
         }
