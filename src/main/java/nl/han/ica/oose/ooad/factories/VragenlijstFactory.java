@@ -1,6 +1,9 @@
 package nl.han.ica.oose.ooad.factories;
 
 import nl.han.ica.oose.ooad.enums.VragenlijstType;
+import nl.han.ica.oose.ooad.models.hierarchie.Onderwerp;
+import nl.han.ica.oose.ooad.models.hierarchie.Thema;
+import nl.han.ica.oose.ooad.models.puntentelling.MakkelijkPuntenTelling;
 import nl.han.ica.oose.ooad.models.vragen.*;
 
 import java.util.ArrayList;
@@ -53,7 +56,7 @@ public class VragenlijstFactory {
 
         vragen.add(new MeerkeuzeVraag("Wanneer was de eerste MCU film uitgekomen?", meerkeuzeAntwoorden));
 
-        return new Vragenlijst("Films", "Marvel", new VraagCollection(vragen), "marvel vragenlijst", 5);
+        return new Vragenlijst(new MakkelijkPuntenTelling(), new VraagCollection(vragen), "marvel vragenlijst", 5);
     }
 
     private Vragenlijst maakMeerkeuzeVragenlijst() {

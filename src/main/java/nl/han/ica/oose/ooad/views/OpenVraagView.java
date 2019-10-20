@@ -25,8 +25,8 @@ public class OpenVraagView {
     public void displayAntwoorden() {
         List<OpenVraagAntwoord> antwoorden = openVraag.getAntwoorden();
 
-        for (int i = 1; i <= antwoorden.size(); i++) {
-            System.out.println(i + ". " + antwoorden.get(i - 1));
+        for (int i = 0; i < antwoorden.size(); i++) {
+            System.out.println((i + 1) + ". " + antwoorden.get(i));
         }
     }
 }

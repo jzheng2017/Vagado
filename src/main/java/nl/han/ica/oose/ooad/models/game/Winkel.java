@@ -1,37 +1,33 @@
 package nl.han.ica.oose.ooad.models.game;
 
+import nl.han.ica.oose.ooad.models.hierarchie.Onderwerp;
+import nl.han.ica.oose.ooad.models.hierarchie.Thema;
 import nl.han.ica.oose.ooad.models.users.User;
 import nl.han.ica.oose.ooad.models.vragen.Vragenlijst;
-import nl.han.ica.oose.ooad.models.vragen.VragenlijstCollection;
 
 import java.util.List;
 
 public class Winkel {
-    private VragenlijstCollection vragenlijsten;
+    private List<Thema> themaList;
 
-    public Winkel(VragenlijstCollection vragenlijsten) {
-        this.vragenlijsten = vragenlijsten;
+    public Winkel(List<Thema> themaList) {
+        this.themaList = themaList;
     }
 
-    public VragenlijstCollection getVragenlijstenCollection() {
-        return vragenlijsten;
+    public List<Thema> getThemaList() {
+        return themaList;
     }
 
-    public List<Vragenlijst> getVragenlijsten() {
-        return vragenlijsten.getVragenlijsten();
+    public List<Onderwerp> getOnderwerpList(int thema) {
+        return themaList.get(thema - 1).getOnderwerpen();
     }
 
-    public Vragenlijst get(int index){
-        return vragenlijsten.getVragenlijst(index);
+    public void setThemaList(List<Thema> themaList) {
+        this.themaList = themaList;
     }
 
-    public void koop(int index){
-        Vragenlijst vragenlijst = get(index);
-
-        if (User.getCurrentUser().verminderSaldo(vragenlijst.getPrijs())){
-
-        } else {
-            System.out.println("Niet genoeg saldo!");
-        }
+    public List<Vragenlijst> getVragenlijst(int currentThema, int currentOnderwerp) {
+        return themaList.get(currentThema - 1).getOnderwerpen().get(currentOnderwerp - 1).getVragenlijst();
     }
+
 }

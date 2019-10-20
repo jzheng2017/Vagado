@@ -5,9 +5,6 @@ import nl.han.ica.oose.ooad.enums.VragenlijstType;
 import nl.han.ica.oose.ooad.factories.VragenlijstFactory;
 import nl.han.ica.oose.ooad.models.users.User;
 import nl.han.ica.oose.ooad.models.vragen.Vragenlijst;
-import nl.han.ica.oose.ooad.models.vragen.VragenlijstCollection;
-
-import java.util.ArrayList;
 
 public class VragenlijstController extends Controller {
 

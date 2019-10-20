@@ -17,6 +17,8 @@ public class ControllerFactory {
                 return new QuizController();
             case Vragenlijst:
                 return new VragenlijstController();
+            case MainMenu:
+                return new MainMenuController();
             default:
                 return null;
         }

@@ -3,6 +3,7 @@ package nl.han.ica.oose.ooad.states;
 import nl.han.ica.oose.ooad.StateMachine;
 import nl.han.ica.oose.ooad.controllers.LoginController;
 import nl.han.ica.oose.ooad.enums.ControllerType;
+import nl.han.ica.oose.ooad.views.LoginView;
 
 public class NotLoggedState extends State {
     private LoginController loginController = (LoginController) controllerManager.getController(ControllerType.Login);
@@ -12,22 +13,23 @@ public class NotLoggedState extends State {
     }
 
     @Override
-    public void start() {
-        System.out.println("Je bent niet ingelogd. Log nu in.");
+    public void entry() {
+        LoginView.notLoggedIn();
     }
 
     @Override
     public void loop() {
         if (loginController.login("jiankai", "zheng")) {
             exit();
-            stateMachine.setCurrentState(new LoggedInState(stateMachine));
+            stateMachine.setCurrentState(new IdleState(stateMachine));
         } else {
-            System.out.println("Invalide inloggegevens. Probeer het opnieuw!");
+            LoginView.invalid();
         }
     }
 
     @Override
     public void exit() {
-        System.out.println("Succesvol ingelogd!");
+        LoginView.successfull();
+        LoginView.welcome();
     }
 }

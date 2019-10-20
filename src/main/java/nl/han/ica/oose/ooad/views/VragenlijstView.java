@@ -24,8 +24,8 @@ public class VragenlijstView {
     public void display() {
         List<Vraag> lijst = vragenlijst.getVragen();
 
-        for (int i = 1; i <= lijst.size(); i++) {
-            System.out.println(i + ". " + lijst.get(i - 1));
+        for (int i = 0; i < lijst.size(); i++) {
+            System.out.println((i + 1) + ". " + lijst.get(i));
         }
     }
 }

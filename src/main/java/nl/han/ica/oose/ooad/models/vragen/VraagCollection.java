@@ -16,12 +16,12 @@ public class VraagCollection {
         Random rnd = new Random();
 
         if (aantal > this.vragen.size()) {
+            System.out.println("Het aantal dat is opgegeven ("+ aantal +") is groter dan het aantal dat in de vragenlijst ("+ this.vragen.size() +") zit, het aantal is gelijk gezet aan het aantal van de vragenlijst.");
             aantal = this.vragen.size();
-            System.out.println("Het aantal dat is opgegeven is groter dan het aantal dat in de vragenlijst zit, het aantal is gelijk gezet aan het aantal van de vragenlijst.");
         }
 
         while (vragen.size() < aantal) {
-            Vraag vraag = this.vragen.get(rnd.nextInt(this.vragen.size() - 1)); //random vraag uit vragenlijst
+            Vraag vraag = this.vragen.get(rnd.nextInt(this.vragen.size())); //random vraag uit vragenlijst
             if (!vragen.contains(vraag)) {
                 vragen.add(vraag);
             }

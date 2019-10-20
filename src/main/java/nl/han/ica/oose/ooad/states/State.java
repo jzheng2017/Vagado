@@ -10,10 +10,10 @@ public abstract class State {
     public State(StateMachine stateMachine) {
         this.stateMachine = stateMachine;
         this.controllerManager = ControllerManager.getInstance();
-        start();
+        entry();
     }
 
-    protected abstract void start();
+    protected abstract void entry();
 
     public abstract void loop();
 

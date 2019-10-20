@@ -6,29 +6,30 @@ import nl.han.ica.oose.ooad.enums.ControllerType;
 import nl.han.ica.oose.ooad.models.users.User;
 
 public class SelectionState extends State {
-    private QuizController quizController = (QuizController) controllerManager.getController(ControllerType.Quiz);
+    private QuizController quizController;
 
     public SelectionState(StateMachine stateMachine) {
         super(stateMachine);
     }
 
     @Override
-    protected void start() {
-        quizController.setVragenlijstCollection(User.getCurrentUser().getVragenlijst());
+    protected void entry() {
+        quizController = (QuizController) controllerManager.getController(ControllerType.Quiz);
     }
 
     @Override
     public void loop() {
-        if (quizController.startSelection() == 0) {
+        int selection = quizController.startSelection();
+        if (selection == 1) {
             exit();
             stateMachine.setCurrentState(new QuizState(stateMachine));
-        } else if (quizController.startSelection() == 2) {
-            stateMachine.setCurrentState(new ExitState(stateMachine));
+        } else if (selection == -1){
+            stateMachine.setCurrentState(new IdleState(stateMachine));
         }
     }
 
     @Override
     protected void exit() {
-        System.out.println("Er is een selectie gemaakt. De quiz gaat nu beginnen.");
+        quizController.selectionExitMessage();
     }
 }

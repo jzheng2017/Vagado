@@ -1,25 +1,23 @@
 package nl.han.ica.oose.ooad.views;
 
 import nl.han.ica.oose.ooad.models.vragen.Vragenlijst;
-import nl.han.ica.oose.ooad.models.vragen.VragenlijstCollection;
 
 import java.util.List;
 
 public class VragenlijstCollectionView {
-    private VragenlijstCollection vragenlijstCollection;
+    private List<Vragenlijst> vragenlijstList;
 
-    public VragenlijstCollectionView(VragenlijstCollection vragenlijstCollection){
-        this.vragenlijstCollection = vragenlijstCollection;
+    public VragenlijstCollectionView(List<Vragenlijst> vragenlijstCollection){
+        this.vragenlijstList = vragenlijstCollection;
     }
 
-    public void setVragenlijstCollection(VragenlijstCollection vragenlijstCollection) {
-        this.vragenlijstCollection = vragenlijstCollection;
+    public void setVragenlijstList(List<Vragenlijst> vragenlijstList) {
+        this.vragenlijstList = vragenlijstList;
     }
 
     public void display() {
-        List<Vragenlijst> lijst = vragenlijstCollection.getVragenlijsten();
-        for (int i = 1; i <= lijst.size(); i++){
-           System.out.println(i + ". " + lijst.get(i - 1));
+        for (int i = 0; i < vragenlijstList.size(); i++){
+           System.out.println((i + 1) + ". " + vragenlijstList.get(i));
         }
     }
 }

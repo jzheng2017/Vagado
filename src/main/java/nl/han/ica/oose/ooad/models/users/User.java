@@ -1,23 +1,24 @@
 package nl.han.ica.oose.ooad.models.users;
 
 import nl.han.ica.oose.ooad.models.vragen.Vragenlijst;
-import nl.han.ica.oose.ooad.models.vragen.VragenlijstCollection;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class User {
     private static User currentUser;
     private int id;
-    private int saldo;
+    private int saldo = 100;
     private String username;
     private String password;
-    private VragenlijstCollection vragenlijst;
+    private List<Vragenlijst> vragenlijst;
 
 
     public User(int id, String username, String password) {
         this.id = id;
         this.username = username;
         this.password = password;
+        vragenlijst = new ArrayList<>();
     }
 
     public User(int id, int saldo, String username, String password) {
@@ -25,6 +26,7 @@ public class User {
         this.saldo = saldo;
         this.username = username;
         this.password = password;
+        vragenlijst = new ArrayList<>();
     }
 
     public static User getCurrentUser() {
@@ -63,7 +65,7 @@ public class User {
         this.password = password;
     }
 
-    public VragenlijstCollection getVragenlijst() {
+    public List<Vragenlijst> getVragenlijst() {
         return vragenlijst;
     }
 
@@ -85,7 +87,11 @@ public class User {
         }
     }
 
-    public void setVragenlijst(VragenlijstCollection vragenlijst) {
+    public void addVragenlijst(Vragenlijst vragenlijst){
+        this.vragenlijst.add(vragenlijst);
+    }
+
+    public void setVragenlijst(List<Vragenlijst> vragenlijst) {
         this.vragenlijst = vragenlijst;
     }
 }
