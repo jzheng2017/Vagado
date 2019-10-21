@@ -34,16 +34,16 @@ public class WinkelView {
         System.out.println("Invalide keuze!");
     }
 
-    public void displayOnderwerpList(int currentThema) {
-        List<Onderwerp> onderwerpList = winkel.getOnderwerpList(currentThema);
+    public void displayOnderwerpList() {
+        List<Onderwerp> onderwerpList = winkel.getOnderwerpList();
         System.out.println("Kies een onderwerp: ");
         for (int i = 0; i < onderwerpList.size(); i++) {
             System.out.println((i + 1) + ". " + onderwerpList.get(i));
         }
     }
 
-    public void displayVragenlijst(int currentThema, int currentOnderwerp) {
-        List<Vragenlijst> vragenlijst = winkel.getVragenlijst(currentThema, currentOnderwerp);
+    public void displayVragenlijst() {
+        List<Vragenlijst> vragenlijst = winkel.getVragenlijst();
 
         System.out.println("Kies een vragenlijst: ");
 
@@ -66,7 +66,7 @@ public class WinkelView {
         System.out.println("Kies M om terug te keren naar het start menu of O om een nieuwe aankoop te doen.");
     }
     public void leave(){
-        System.out.println("Kies M om de winkel te verlaten.");
+        System.out.println("Je kan de winkel op elk moment verlaten, kies een willekeurig non numeriek karakter om de winkel te verlaten.");
     }
     public void exit() {
         System.out.println("Je verlaat nu de winkel. Tot de volgende keer.");

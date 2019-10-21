@@ -4,8 +4,6 @@ import nl.han.ica.oose.ooad.enums.ControllerType;
 import nl.han.ica.oose.ooad.models.game.Quiz;
 import nl.han.ica.oose.ooad.models.users.User;
 import nl.han.ica.oose.ooad.models.vragen.Vragenlijst;
-import nl.han.ica.oose.ooad.views.MeerkeuzeVraagView;
-import nl.han.ica.oose.ooad.views.OpenVraagView;
 import nl.han.ica.oose.ooad.views.QuizSelectionView;
 import nl.han.ica.oose.ooad.views.QuizView;
 
@@ -18,9 +16,7 @@ public class QuizController extends Controller {
     private List<Vragenlijst> vragenlijstList;
     private Quiz quiz;
     private QuizView quizView;
-    private OpenVraagView openVraagView;
     private QuizSelectionView quizSelectionView;
-    private MeerkeuzeVraagView meerkeuzeVraagView;
 
     public QuizController() {
         setType(ControllerType.Quiz);

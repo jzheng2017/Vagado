@@ -1,9 +1,10 @@
 package nl.han.ica.oose.ooad.enums;
 
-public enum OrderStatus {
+public enum SelectionState {
+    NONE,
     THEMA,
     ONDERWERP,
     VRAGENLIJST,
-    BUY,
+    EDIT,
     DONE
 }

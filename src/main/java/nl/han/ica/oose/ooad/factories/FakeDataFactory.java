@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FakeDataFactory {
+    private static List<Thema> themaList;
 
     public static void getFakeUsers(){
         UserManager userManager = UserManager.getInstance();
@@ -18,23 +19,26 @@ public class FakeDataFactory {
     }
 
     public static List<Thema> getThemaFilledWithSubjects() {
-        List<Thema> list = new ArrayList<>();
-        list.add(new Thema("Entertainment"));
-        List<Onderwerp> onderwerpen = new ArrayList<>();
+        if (themaList == null) {
+            List<Thema> list = new ArrayList<>();
+            list.add(new Thema("Entertainment"));
+            List<Onderwerp> onderwerpen = new ArrayList<>();
 
-        List<Vragenlijst> vragenlijst = new ArrayList<>();
-        vragenlijst.add(getMixedVragenlijst());
-        vragenlijst.add(getMixedVragenlijst2());
-        onderwerpen.add(new Onderwerp(list.get(0), "Marvel", vragenlijst));
-        list.get(0).setOnderwerpen(onderwerpen);
-        list.add(new Thema("Sports"));
-        List<Onderwerp> onderwerpen2 = new ArrayList<>();
+            List<Vragenlijst> vragenlijst = new ArrayList<>();
+            vragenlijst.add(getMixedVragenlijst());
+            vragenlijst.add(getMixedVragenlijst2());
+            onderwerpen.add(new Onderwerp(list.get(0), "Marvel", vragenlijst));
+            list.get(0).setOnderwerpen(onderwerpen);
+            list.add(new Thema("Sports"));
+            List<Onderwerp> onderwerpen2 = new ArrayList<>();
 
-        List<Vragenlijst> vragenlijst2 = new ArrayList<>();
-        vragenlijst2.add(getMixedVragenlijst3());
-        onderwerpen2.add(new Onderwerp(list.get(1), "Football", vragenlijst2));
-        list.get(1).setOnderwerpen(onderwerpen2);
-        return list;
+            List<Vragenlijst> vragenlijst2 = new ArrayList<>();
+            vragenlijst2.add(getMixedVragenlijst3());
+            onderwerpen2.add(new Onderwerp(list.get(1), "Football", vragenlijst2));
+            list.get(1).setOnderwerpen(onderwerpen2);
+            themaList = list;
+        }
+        return themaList;
     }
 
     public static Vragenlijst getMixedVragenlijst() {
