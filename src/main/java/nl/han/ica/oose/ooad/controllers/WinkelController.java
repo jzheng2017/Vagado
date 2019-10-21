@@ -82,6 +82,13 @@ public class WinkelController extends Controller {
         }
     }
 
+    public void choice(){
+        winkelView.choice();
+    }
+
+    public void leaveMessage(){
+        winkelView.leave();
+    }
     public void exitMessage() {
         winkelView.exit();
     }

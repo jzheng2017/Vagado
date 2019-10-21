@@ -4,7 +4,8 @@ public enum ControllerType {
     Login,
     Register,
     Winkel,
-    Vragenlijst,
-    Quiz, MainMenu;
+    Quiz,
+    MainMenu,
+    Beheer;
 
 }

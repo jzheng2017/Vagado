@@ -37,6 +37,7 @@ public class QuizController extends Controller {
         if (authorized()) {
             quizSelectionView.display();
             int choice = scanner.nextInt();
+            scanner.nextLine(); //skip the line because nextInt() does not consume the newline input created by hitting "Enter"
             if (choice < 0 || choice > vragenlijstList.size()) {
                 quizSelectionView.invalid();
                 return 0;
@@ -65,7 +66,6 @@ public class QuizController extends Controller {
     public void playQuiz() {
         if (quiz.next()){
             quizView.display();
-            scanner.nextLine(); //skip the display message;
             quiz.answer(scanner.nextLine());
         }
     }

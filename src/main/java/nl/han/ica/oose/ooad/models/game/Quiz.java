@@ -77,7 +77,8 @@ public class Quiz {
     }
 
     public boolean next() {
-        if (++huidigeVraag < vragen.size()) {
+        huidigeVraag++;
+        if ( huidigeVraag < vragen.size()) {
             return true;
         } else {
             toggle();

@@ -1,18 +1,29 @@
 package nl.han.ica.oose.ooad.controllers;
 
 import nl.han.ica.oose.ooad.enums.ControllerType;
+import nl.han.ica.oose.ooad.models.users.Login;
 import nl.han.ica.oose.ooad.models.users.User;
+import nl.han.ica.oose.ooad.models.users.UserManager;
+import nl.han.ica.oose.ooad.views.LoginView;
 
 public class LoginController extends Controller {
-
+    private LoginView loginView;
     public LoginController() {
         setType(ControllerType.Login);
     }
 
     public boolean login(String username, String password) {
+        UserManager userManager = UserManager.getInstance();
         if (authorized()) {
-            User.setCurrentUser(new User(1, "jiankai", "zheng")); //not real login implementation but only faked data
-            return true;
+            loginView = new LoginView(new Login(username, password));
+            User user = userManager.getByUsername(username);
+            if (user != null) {
+                User.setCurrentUser(user);
+                return true;
+            } else {
+                LoginView.invalid();
+                return false;
+            }
         } else {
             System.out.println("Je mag deze actie niet uitvoeren");
             return false;
@@ -22,5 +33,15 @@ public class LoginController extends Controller {
     @Override
     public boolean authorized() {
         return !User.loggedIn();
+    }
+
+    public void entryMessage(){
+        LoginView.notLoggedIn();
+        LoginView.choice();
+    }
+
+    public void exitMessage() {
+        LoginView.successfull();
+        loginView.welcome();
     }
 }

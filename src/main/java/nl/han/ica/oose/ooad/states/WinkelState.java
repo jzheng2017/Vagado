@@ -46,18 +46,28 @@ public class WinkelState extends State {
                 break;
             case DONE:
                 String choice = scanner.nextLine();
-                winkelController.exitMessage();
+                winkelController.choice();
                 if (choice.equalsIgnoreCase("O")) {
                     proces = OrderStatus.THEMA;
                 } else if (choice.equalsIgnoreCase("M")) {
+                    exit();
                     stateMachine.setCurrentState(new IdleState(stateMachine));
                 }
                 break;
         }
     }
 
+//    private boolean leave(){
+//        winkelController.leaveMessage();
+//        if (scanner.nextLine().equalsIgnoreCase("M")){
+//            stateMachine.setCurrentState(new IdleState(stateMachine));
+//            return true;
+//        }
+//        return false;
+//    }
+
     @Override
     protected void exit() {
-
+        winkelController.exitMessage();
     }
 }

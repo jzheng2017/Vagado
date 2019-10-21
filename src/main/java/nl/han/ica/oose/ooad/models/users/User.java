@@ -7,25 +7,25 @@ import java.util.List;
 
 public class User {
     private static User currentUser;
-    private int id;
     private int saldo = 100;
     private String username;
     private String password;
+    private boolean isAdmin = false;
     private List<Vragenlijst> vragenlijst;
 
 
-    public User(int id, String username, String password) {
-        this.id = id;
+    public User(String username, String password, boolean isAdmin) {
         this.username = username;
         this.password = password;
+        this.isAdmin = isAdmin;
         vragenlijst = new ArrayList<>();
     }
 
-    public User(int id, int saldo, String username, String password) {
-        this.id = id;
+    public User(int saldo, String username, String password, boolean isAdmin) {
         this.saldo = saldo;
         this.username = username;
         this.password = password;
+        this.isAdmin = isAdmin;
         vragenlijst = new ArrayList<>();
     }
 
@@ -39,14 +39,6 @@ public class User {
 
     public static boolean loggedIn() {
         return currentUser != null;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getUsername() {
@@ -93,5 +85,13 @@ public class User {
 
     public void setVragenlijst(List<Vragenlijst> vragenlijst) {
         this.vragenlijst = vragenlijst;
+    }
+
+    public static boolean isAdmin() {
+        return currentUser.isAdmin;
+    }
+
+    public void setAdmin(boolean admin) {
+        isAdmin = admin;
     }
 }

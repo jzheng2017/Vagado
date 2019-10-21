@@ -62,7 +62,13 @@ public class WinkelView {
                 + price + ". Uw saldo is verlaagd van " + (balance + price) + " naar " + balance);
     }
 
-    public void exit(){
+    public void choice(){
         System.out.println("Kies M om terug te keren naar het start menu of O om een nieuwe aankoop te doen.");
+    }
+    public void leave(){
+        System.out.println("Kies M om de winkel te verlaten.");
+    }
+    public void exit() {
+        System.out.println("Je verlaat nu de winkel. Tot de volgende keer.");
     }
 }

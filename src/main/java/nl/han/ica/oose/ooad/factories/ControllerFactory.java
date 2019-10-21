@@ -15,8 +15,6 @@ public class ControllerFactory {
                 return new WinkelController();
             case Quiz:
                 return new QuizController();
-            case Vragenlijst:
-                return new VragenlijstController();
             case MainMenu:
                 return new MainMenuController();
             default:
