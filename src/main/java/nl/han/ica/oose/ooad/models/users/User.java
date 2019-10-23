@@ -11,14 +11,14 @@ public class User {
     private String username;
     private String password;
     private boolean isAdmin = false;
-    private List<Vragenlijst> vragenlijst;
+    private List<Vragenlijst> vragenlijsten;
 
 
     public User(String username, String password, boolean isAdmin) {
         this.username = username;
         this.password = password;
         this.isAdmin = isAdmin;
-        vragenlijst = new ArrayList<>();
+        vragenlijsten = new ArrayList<>();
     }
 
     public User(int saldo, String username, String password, boolean isAdmin) {
@@ -26,7 +26,7 @@ public class User {
         this.username = username;
         this.password = password;
         this.isAdmin = isAdmin;
-        vragenlijst = new ArrayList<>();
+        vragenlijsten = new ArrayList<>();
     }
 
     public static User getCurrentUser() {
@@ -57,16 +57,12 @@ public class User {
         this.password = password;
     }
 
-    public List<Vragenlijst> getVragenlijst() {
-        return vragenlijst;
+    public List<Vragenlijst> getVragenlijsten() {
+        return vragenlijsten;
     }
 
     public int getSaldo() {
         return saldo;
-    }
-
-    public void verhoogSaldo(int aantal) {
-        this.saldo += aantal;
     }
 
 
@@ -80,11 +76,11 @@ public class User {
     }
 
     public void addVragenlijst(Vragenlijst vragenlijst){
-        this.vragenlijst.add(vragenlijst);
+        this.vragenlijsten.add(vragenlijst);
     }
 
-    public void setVragenlijst(List<Vragenlijst> vragenlijst) {
-        this.vragenlijst = vragenlijst;
+    public void setVragenlijsten(List<Vragenlijst> vragenlijsten) {
+        this.vragenlijsten = vragenlijsten;
     }
 
     public static boolean isAdmin() {

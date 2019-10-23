@@ -5,7 +5,7 @@ import nl.han.ica.oose.ooad.enums.ControllerType;
 public abstract class Controller {
     private ControllerType type;
 
-    abstract boolean authorized();
+    protected abstract boolean authorized();
 
     public ControllerType getType() {
         return type;

@@ -31,7 +31,7 @@ public class LoginController extends Controller {
     }
 
     @Override
-    public boolean authorized() {
+    protected boolean authorized() {
         return !User.loggedIn();
     }
 
@@ -41,7 +41,7 @@ public class LoginController extends Controller {
     }
 
     public void exitMessage() {
-        LoginView.successfull();
+        LoginView.successful();
         loginView.welcome();
     }
 }

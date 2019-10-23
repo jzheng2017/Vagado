@@ -65,6 +65,6 @@ public class WinkelState extends State {
     @Override
     protected void exit() {
         winkelController.exitMessage();
-        stateMachine.setCurrentState(new IdleState(stateMachine));
+        stateMachine.setCurrentState(new MainMenuState(stateMachine));
     }
 }

@@ -3,7 +3,6 @@ package nl.han.ica.oose.ooad.states;
 import nl.han.ica.oose.ooad.StateMachine;
 import nl.han.ica.oose.ooad.controllers.QuizController;
 import nl.han.ica.oose.ooad.enums.ControllerType;
-import nl.han.ica.oose.ooad.models.users.User;
 
 public class SelectionState extends State {
     private QuizController quizController;
@@ -24,7 +23,7 @@ public class SelectionState extends State {
             exit();
             stateMachine.setCurrentState(new QuizState(stateMachine));
         } else if (selection == -1){
-            stateMachine.setCurrentState(new IdleState(stateMachine));
+            stateMachine.setCurrentState(new MainMenuState(stateMachine));
         }
     }
 

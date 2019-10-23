@@ -2,28 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41f771b2-fff3-441f-a48b-24344695118a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/languages/Language.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/models/game/Beheer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/models/game/ThemaHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/controllers/BeheerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/controllers/BeheerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/StateMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/StateMachine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/Vagado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/Vagado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/controllers/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/controllers/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/controllers/MainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/controllers/MainMenuController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/controllers/QuizController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/controllers/QuizController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/controllers/WinkelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/controllers/WinkelController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/enums/OrderStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/enums/SelectionState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/factories/ControllerFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/factories/ControllerFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/controllers/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/controllers/RegisterController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/factories/FakeDataFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/factories/FakeDataFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/models/game/Winkel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/models/game/Winkel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/languages/Language.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/languages/Language.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/models/game/Quiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/models/game/Quiz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/models/users/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/models/users/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/models/vragen/Vragenlijst.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/models/vragen/Vragenlijst.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/states/BeheerState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/states/BeheerState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/states/IdleState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/states/MainMenuState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/states/NotLoggedState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/states/NotLoggedState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/states/QuizState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/states/QuizState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/states/SelectionState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/states/SelectionState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/states/WinkelState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/states/WinkelState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/views/BeheerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/views/BeheerView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/views/MainMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/views/MainMenuView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/views/MeerkeuzeVraagView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/views/OpenVraagView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/views/ThemaView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/views/VragenlijstCollectionView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/views/VragenlijstView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/views/WinkelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/views/WinkelView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/views/LoginView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/views/LoginView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/views/RegisterView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/views/RegisterView.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -122,7 +122,8 @@
       <workItem from="1571311073476" duration="8133000" />
       <workItem from="1571349840694" duration="600000" />
       <workItem from="1571584157788" duration="26930000" />
-      <workItem from="1571684693766" duration="11503000" />
+      <workItem from="1571684693766" duration="13680000" />
+      <workItem from="1571764703834" duration="8634000" />
     </task>
     <servers />
   </component>
@@ -141,16 +142,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/models/vragen/OpenVraag.java</url>
-          <line>14</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

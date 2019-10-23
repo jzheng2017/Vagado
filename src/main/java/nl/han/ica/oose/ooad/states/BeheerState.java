@@ -8,8 +8,6 @@ import nl.han.ica.oose.ooad.enums.SelectionState;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import static nl.han.ica.oose.ooad.enums.SelectionState.NONE;
-
 public class BeheerState extends State {
     private BeheerController beheerController;
     private SelectionState proces;
@@ -23,7 +21,7 @@ public class BeheerState extends State {
     protected void entry() {
         beheerController = (BeheerController) controllerManager.getController(ControllerType.Beheer);
         if (!beheerController.initial()) {
-            stateMachine.setCurrentState(new IdleState(stateMachine));
+            stateMachine.setCurrentState(new MainMenuState(stateMachine));
             proces = SelectionState.NONE;
         } else {
             proces = SelectionState.THEMA;
@@ -79,6 +77,6 @@ public class BeheerState extends State {
     @Override
     protected void exit() {
         beheerController.exitMessage();
-        stateMachine.setCurrentState(new IdleState(stateMachine));
+        stateMachine.setCurrentState(new MainMenuState(stateMachine));
     }
 }

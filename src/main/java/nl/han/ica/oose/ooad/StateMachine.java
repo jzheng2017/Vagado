@@ -1,7 +1,7 @@
 package nl.han.ica.oose.ooad;
 
 import nl.han.ica.oose.ooad.models.users.User;
-import nl.han.ica.oose.ooad.states.IdleState;
+import nl.han.ica.oose.ooad.states.MainMenuState;
 import nl.han.ica.oose.ooad.states.NotLoggedState;
 import nl.han.ica.oose.ooad.states.State;
 
@@ -18,7 +18,7 @@ public class StateMachine {
 
 
     private void setup() {
-        currentState = User.loggedIn() ? new IdleState(this) : new NotLoggedState(this);
+        currentState = User.loggedIn() ? new MainMenuState(this) : new NotLoggedState(this);
     }
 
     public State getCurrentState() {

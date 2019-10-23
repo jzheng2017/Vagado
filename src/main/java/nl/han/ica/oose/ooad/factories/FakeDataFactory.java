@@ -61,7 +61,7 @@ public class FakeDataFactory {
 
         vragen.add(new MeerkeuzeVraag("Wanneer was de eerste MCU film uitgekomen?", meerkeuzeAntwoorden));
 
-        return new Vragenlijst(new MakkelijkPuntenTelling(), new VraagCollection(vragen), "marvel vragenlijst", 5);
+        return new Vragenlijst(new VraagCollection(vragen), "marvel vragenlijst", 5);
     }
 
     public static Vragenlijst getMixedVragenlijst2() {
@@ -84,7 +84,7 @@ public class FakeDataFactory {
 
         vragen.add(new MeerkeuzeVraag("Waar komt Thor vandaan?", meerkeuzeAntwoorden));
 
-        return new Vragenlijst(new MakkelijkPuntenTelling(), new VraagCollection(vragen), "marvel vragenlijst 2", 8);
+        return new Vragenlijst(new VraagCollection(vragen), "marvel vragenlijst 2", 8);
     }
 
     public static Vragenlijst getMixedVragenlijst3() {
@@ -106,6 +106,6 @@ public class FakeDataFactory {
 
         vragen.add(new MeerkeuzeVraag("Hoe oud is Lionel Messi?", meerkeuzeAntwoorden));
 
-        return new Vragenlijst(new MakkelijkPuntenTelling(), new VraagCollection(vragen), "Voetbal vragenlijst", 5);
+        return new Vragenlijst(new VraagCollection(vragen), "Voetbal vragenlijst", 5);
     }
 }

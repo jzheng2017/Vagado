@@ -1,11 +1,11 @@
 package nl.han.ica.oose.ooad;
 
-import java.util.Scanner;
+import nl.han.ica.oose.ooad.models.puntentelling.MakkelijkPuntenTelling;
 
 public class Vagado {
     public static void main(String[] args) {
-        App app = new App();
-
+        App app = App.getInstance();
+        app.setPuntenTelling(new MakkelijkPuntenTelling());
         app.start();
     }
 }

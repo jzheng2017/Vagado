@@ -1,18 +1,15 @@
 package nl.han.ica.oose.ooad.states;
 
 import nl.han.ica.oose.ooad.StateMachine;
-import nl.han.ica.oose.ooad.controllers.ControllerManager;
 import nl.han.ica.oose.ooad.controllers.MainMenuController;
 import nl.han.ica.oose.ooad.enums.ControllerType;
-import nl.han.ica.oose.ooad.factories.ControllerFactory;
-
 import java.util.Scanner;
 
-public class IdleState extends State {
+public class MainMenuState extends State {
     private Scanner scanner = new Scanner(System.in);
     private MainMenuController mainMenuController;
 
-    public IdleState(StateMachine stateMachine) {
+    public MainMenuState(StateMachine stateMachine) {
         super(stateMachine);
 
     }

@@ -23,12 +23,12 @@ public class QuizController extends Controller {
     }
 
     @Override
-    boolean authorized() {
-        return User.loggedIn() && User.getCurrentUser().getVragenlijst().size() > 0;
+    protected boolean authorized() {
+        return User.loggedIn() && User.getCurrentUser().getVragenlijsten().size() > 0;
     }
 
     public int startSelection() {
-        vragenlijstList = User.getCurrentUser().getVragenlijst();
+        vragenlijstList = User.getCurrentUser().getVragenlijsten();
         quizSelectionView = new QuizSelectionView(vragenlijstList);
         if (authorized()) {
             quizSelectionView.display();
@@ -47,16 +47,15 @@ public class QuizController extends Controller {
         }
     }
 
-    public boolean startQuiz() {
+    public void startQuiz() {
         if (authorized()) {
-            Quiz.setCurrentQuiz(new Quiz(vragenlijst, User.getCurrentUser()));
+            Quiz.setCurrentQuiz(new Quiz(vragenlijst));
             quiz = Quiz.getCurrentQuiz();
             quizView = new QuizView(quiz);
             quiz.start();
         } else {
             quizSelectionView.unauthorized();
         }
-        return true;
     }
 
     public void playQuiz() {

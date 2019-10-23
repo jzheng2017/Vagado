@@ -1,5 +1,6 @@
 package nl.han.ica.oose.ooad.models.game;
 
+import nl.han.ica.oose.ooad.App;
 import nl.han.ica.oose.ooad.models.puntentelling.PuntenTelling;
 import nl.han.ica.oose.ooad.models.users.User;
 import nl.han.ica.oose.ooad.models.vragen.Vraag;
@@ -11,16 +12,14 @@ public class Quiz {
     private static Quiz currentQuiz;
     private Vragenlijst vragenlijst;
     private List<Vraag> vragen;
-    private User speler;
     private int highscore;
     private int score;
     private int aantalCorrect = 0;
     private int huidigeVraag = -1;
     private boolean playing = false;
 
-    public Quiz(Vragenlijst vragenlijst, User speler) {
+    public Quiz(Vragenlijst vragenlijst) {
         this.vragenlijst = vragenlijst;
-        this.speler = speler;
     }
 
     public static Quiz getCurrentQuiz() {
@@ -29,14 +28,6 @@ public class Quiz {
 
     public static void setCurrentQuiz(Quiz currentQuiz) {
         Quiz.currentQuiz = currentQuiz;
-    }
-
-    public User getSpeler() {
-        return speler;
-    }
-
-    public void setSpeler(User speler) {
-        this.speler = speler;
     }
 
     public List<Vraag> getVragen() {
@@ -51,20 +42,8 @@ public class Quiz {
         return aantalCorrect;
     }
 
-    public void verhoogAantalCorrect() {
-        this.aantalCorrect++;
-    }
-
     public int getHighscore() {
         return highscore;
-    }
-
-    public void setHighscore(int highscore) {
-        this.highscore = highscore;
-    }
-
-    public void setHuidigeVraag(int huidigeVraag) {
-        this.huidigeVraag = huidigeVraag;
     }
 
     public boolean isPlaying() {
@@ -87,7 +66,7 @@ public class Quiz {
     }
 
     private void berekenScore() {
-        score = vragenlijst.getPuntenTelling().bereken(aantalCorrect, aantalCorrect == vragen.size());
+        score = App.getInstance().getPuntenTelling().bereken(aantalCorrect, aantalCorrect == vragen.size());
         if (highscore < score) highscore = score;
     }
 

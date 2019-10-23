@@ -21,7 +21,7 @@ public class QuizState extends State {
         quizController.playQuiz();
         if (!quizController.isPlaying()){
             exit();
-            stateMachine.setCurrentState(new IdleState(stateMachine));
+            stateMachine.setCurrentState(new MainMenuState(stateMachine));
         }
     }
 

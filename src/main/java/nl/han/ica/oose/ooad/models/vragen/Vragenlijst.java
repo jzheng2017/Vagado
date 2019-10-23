@@ -5,7 +5,6 @@ import nl.han.ica.oose.ooad.models.puntentelling.PuntenTelling;
 import java.util.List;
 
 public class Vragenlijst {
-    private PuntenTelling puntenTelling;
     private VraagCollection vragen;
     private String naam;
     private int prijs;
@@ -14,21 +13,6 @@ public class Vragenlijst {
         this.vragen = vragen;
         this.naam = naam;
         this.prijs = prijs;
-    }
-
-    public Vragenlijst(PuntenTelling puntenTelling, VraagCollection vragen, String naam, int prijs) {
-        this.puntenTelling = puntenTelling;
-        this.vragen = vragen;
-        this.naam = naam;
-        this.prijs = prijs;
-    }
-
-    public void setPuntenTelling(PuntenTelling puntenTelling) {
-        this.puntenTelling = puntenTelling;
-    }
-
-    public PuntenTelling getPuntenTelling() {
-        return puntenTelling;
     }
 
     public int getPrijs() {

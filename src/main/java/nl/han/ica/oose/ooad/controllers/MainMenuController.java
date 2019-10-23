@@ -12,7 +12,7 @@ public class MainMenuController extends Controller {
     }
 
     @Override
-    boolean authorized() {
+    protected boolean authorized() {
         return User.loggedIn();
     }
 

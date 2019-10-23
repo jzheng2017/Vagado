@@ -13,7 +13,7 @@ public class LoginView {
         System.out.println("Welkom " +  login.getUsername() + ". Je bent nu ingelogd.");
     }
 
-    public static void successfull() {
+    public static void successful() {
         System.out.println("Succesvol ingelogd!");
     }
 

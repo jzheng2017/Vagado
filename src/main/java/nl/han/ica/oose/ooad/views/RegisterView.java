@@ -9,7 +9,7 @@ public class RegisterView {
         this.register = register;
     }
 
-    public void successfull(){
+    public void successful(){
         System.out.println("Je bent succesvol geregistreerd!");
         System.out.println("Logingegevens:");
         System.out.println("Username: " + register.getUsername());

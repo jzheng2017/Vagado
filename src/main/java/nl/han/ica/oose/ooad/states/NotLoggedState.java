@@ -5,9 +5,6 @@ import nl.han.ica.oose.ooad.controllers.LoginController;
 import nl.han.ica.oose.ooad.controllers.RegisterController;
 import nl.han.ica.oose.ooad.enums.ControllerType;
 import nl.han.ica.oose.ooad.factories.FakeDataFactory;
-import nl.han.ica.oose.ooad.models.users.Register;
-import nl.han.ica.oose.ooad.models.users.User;
-import nl.han.ica.oose.ooad.views.LoginView;
 
 import java.util.Scanner;
 
@@ -21,7 +18,7 @@ public class NotLoggedState extends State {
     }
 
     @Override
-    public void entry() {
+    protected void entry() {
         loginController = (LoginController) controllerManager.getController(ControllerType.Login);
         FakeDataFactory.getFakeUsers();
         loginController.entryMessage();
@@ -37,7 +34,7 @@ public class NotLoggedState extends State {
             String password = scanner.nextLine();
             if (loginController.login(username, password)) {
                 exit();
-                stateMachine.setCurrentState(new IdleState(stateMachine));
+                stateMachine.setCurrentState(new MainMenuState(stateMachine));
                 return;
             }
         } else if (choice.equalsIgnoreCase("R")) {
@@ -51,7 +48,7 @@ public class NotLoggedState extends State {
     }
 
     @Override
-    public void exit() {
+    protected void exit() {
         loginController.exitMessage();
     }
 }
