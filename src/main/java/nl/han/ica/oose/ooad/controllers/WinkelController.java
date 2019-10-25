@@ -35,7 +35,7 @@ public class WinkelController extends Controller {
             winkelView.invalid();
             return false;
         } else {
-           winkel.setCurrentThema(num);
+            winkel.setCurrentThema(num);
             return true;
         }
     }
@@ -61,15 +61,19 @@ public class WinkelController extends Controller {
 
     public boolean buyVragenlijst(int currentVragenlijst) {
         currentVragenlijst -= 1;
-        if ( currentVragenlijst >= 0 && currentVragenlijst < winkel.getVragenlijst().size()) {
+        if (currentVragenlijst >= 0 && currentVragenlijst < winkel.getVragenlijst().size()) {
             Vragenlijst vragenlijst = winkel.getVragenlijst().get(currentVragenlijst);
-
-            if (User.getCurrentUser().verminderSaldo(vragenlijst.getPrijs())) {
-                User.getCurrentUser().addVragenlijst(vragenlijst);
-                winkelView.successfull(vragenlijst.getPrijs(), User.getCurrentUser().getSaldo());
-                return true;
+            if (!User.getCurrentUser().expired(vragenlijst)) {
+                if (User.getCurrentUser().verminderSaldo(vragenlijst.getPrijs())) {
+                    User.getCurrentUser().addVragenlijst(vragenlijst);
+                    winkelView.successfull(vragenlijst.getPrijs(), User.getCurrentUser().getSaldo());
+                    return true;
+                } else {
+                    winkelView.insufficient();
+                    return false;
+                }
             } else {
-                winkelView.insufficient();
+                winkelView.duplicate();
                 return false;
             }
         } else {
@@ -78,11 +82,11 @@ public class WinkelController extends Controller {
         }
     }
 
-    public void choice(){
+    public void choice() {
         winkelView.choice();
     }
 
-    public void leaveMessage(){
+    public void leaveMessage() {
         winkelView.leave();
     }
 

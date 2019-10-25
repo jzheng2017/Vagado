@@ -33,4 +33,8 @@ public class QuizSelectionView {
     public void invalid() {
         System.out.println("Invalide keuze. Kies tussen: 1 en " + vragenlijstList.size());
     }
+
+    public void expired() {
+        System.out.println("De vragenlijst die je hebt gekozen is verlopen. Om het te kunnen spelen moet je het vernieuwen. Doe dat door het opnieuw te kopen in de winkel.");
+    }
 }

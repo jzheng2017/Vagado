@@ -1,10 +1,12 @@
 package nl.han.ica.oose.ooad.models.vragen;
 
+import nl.han.ica.oose.ooad.models.puntentelling.MakkelijkPuntenTelling;
 import nl.han.ica.oose.ooad.models.puntentelling.PuntenTelling;
 
 import java.util.List;
 
 public class Vragenlijst {
+    private static PuntenTelling puntenTelling = new MakkelijkPuntenTelling();
     private VraagCollection vragen;
     private String naam;
     private int prijs;
@@ -13,6 +15,14 @@ public class Vragenlijst {
         this.vragen = vragen;
         this.naam = naam;
         this.prijs = prijs;
+    }
+
+    public static PuntenTelling getPuntenTelling() {
+        return puntenTelling;
+    }
+
+    public static void setPuntenTelling(PuntenTelling puntenTelling) {
+        Vragenlijst.puntenTelling = puntenTelling;
     }
 
     public int getPrijs() {
@@ -47,4 +57,7 @@ public class Vragenlijst {
         this.naam = naam;
     }
 
+    public int bereken(int aantalCorrect, boolean allesCorrect) {
+       return puntenTelling.bereken(aantalCorrect, allesCorrect);
+    }
 }

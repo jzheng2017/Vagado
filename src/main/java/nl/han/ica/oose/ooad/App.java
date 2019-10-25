@@ -6,7 +6,6 @@ import nl.han.ica.oose.ooad.models.puntentelling.PuntenTelling;
 public class App {
     private static App app;
     private StateMachine stateMachine = new StateMachine();
-    private PuntenTelling puntenTelling;
     private Language appLanguage;
 
     private App(){
@@ -18,16 +17,6 @@ public class App {
         }
         return app;
     }
-
-    public void setPuntenTelling(PuntenTelling puntenTelling) {
-        this.puntenTelling = puntenTelling;
-    }
-
-    public PuntenTelling getPuntenTelling() {
-        return puntenTelling;
-    }
-
-
     public Language getAppLanguage() {
         return appLanguage;
     }

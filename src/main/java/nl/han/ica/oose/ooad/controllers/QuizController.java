@@ -39,6 +39,10 @@ public class QuizController extends Controller {
                 return 0;
             } else {
                 vragenlijst = vragenlijstList.get(choice - 1);
+                if (!User.getCurrentUser().expired(vragenlijst)) {
+                    quizSelectionView.expired();
+                    return 0;
+                }
                 return 1;
             }
         } else {
@@ -49,8 +53,12 @@ public class QuizController extends Controller {
 
     public void startQuiz() {
         if (authorized()) {
-            Quiz.setCurrentQuiz(new Quiz(vragenlijst));
-            quiz = Quiz.getCurrentQuiz();
+            quiz = User.getCurrentUser().getQuiz(vragenlijst);
+            if (quiz == null) {
+                quiz = new Quiz(vragenlijst);
+                Quiz.setCurrentQuiz(quiz);
+                User.getCurrentUser().addQuiz(quiz);
+            }
             quizView = new QuizView(quiz);
             quiz.start();
         } else {
@@ -59,7 +67,7 @@ public class QuizController extends Controller {
     }
 
     public void playQuiz() {
-        if (quiz.next()){
+        if (quiz.next()) {
             quizView.display();
             quiz.answer(scanner.nextLine());
         }

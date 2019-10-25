@@ -3,7 +3,7 @@ package nl.han.ica.oose.ooad.controllers;
 import nl.han.ica.oose.ooad.enums.ControllerType;
 import nl.han.ica.oose.ooad.models.users.Register;
 import nl.han.ica.oose.ooad.models.users.User;
-import nl.han.ica.oose.ooad.models.users.UserManager;
+import nl.han.ica.oose.ooad.managers.UserManager;
 import nl.han.ica.oose.ooad.views.RegisterView;
 
 public class RegisterController extends Controller {

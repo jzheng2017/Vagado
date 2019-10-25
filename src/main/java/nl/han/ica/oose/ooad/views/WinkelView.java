@@ -71,4 +71,8 @@ public class WinkelView {
     public void exit() {
         System.out.println("Je verlaat nu de winkel. Tot de volgende keer.");
     }
+
+    public void duplicate() {
+        System.out.println("Je bent al in bezit van deze vragenlijst!");
+    }
 }

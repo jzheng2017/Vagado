@@ -1,4 +1,6 @@
-package nl.han.ica.oose.ooad.models.users;
+package nl.han.ica.oose.ooad.managers;
+
+import nl.han.ica.oose.ooad.models.users.User;
 
 import java.util.ArrayList;
 import java.util.List;

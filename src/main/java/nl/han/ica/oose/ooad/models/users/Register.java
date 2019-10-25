@@ -1,5 +1,7 @@
 package nl.han.ica.oose.ooad.models.users;
 
+import nl.han.ica.oose.ooad.managers.UserManager;
+
 public class Register {
     private String username;
     private String password;

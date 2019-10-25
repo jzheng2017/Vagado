@@ -1,9 +1,13 @@
 package nl.han.ica.oose.ooad.models.users;
 
+import nl.han.ica.oose.ooad.managers.QuizManager;
+import nl.han.ica.oose.ooad.models.game.Quiz;
+import nl.han.ica.oose.ooad.models.vragen.UserVragenlijst;
 import nl.han.ica.oose.ooad.models.vragen.Vragenlijst;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class User {
     private static User currentUser;
@@ -11,14 +15,14 @@ public class User {
     private String username;
     private String password;
     private boolean isAdmin = false;
-    private List<Vragenlijst> vragenlijsten;
-
+    private List<UserVragenlijst> vragenlijsten = new ArrayList<>();
+    private QuizManager quizManager = new QuizManager();
 
     public User(String username, String password, boolean isAdmin) {
         this.username = username;
         this.password = password;
         this.isAdmin = isAdmin;
-        vragenlijsten = new ArrayList<>();
+
     }
 
     public User(int saldo, String username, String password, boolean isAdmin) {
@@ -26,7 +30,6 @@ public class User {
         this.username = username;
         this.password = password;
         this.isAdmin = isAdmin;
-        vragenlijsten = new ArrayList<>();
     }
 
     public static User getCurrentUser() {
@@ -58,7 +61,7 @@ public class User {
     }
 
     public List<Vragenlijst> getVragenlijsten() {
-        return vragenlijsten;
+        return vragenlijsten.stream().map(UserVragenlijst::getVragenlijst).collect(Collectors.toList());
     }
 
     public int getSaldo() {
@@ -75,11 +78,21 @@ public class User {
         }
     }
 
-    public void addVragenlijst(Vragenlijst vragenlijst){
-        this.vragenlijsten.add(vragenlijst);
+    public boolean expired(Vragenlijst vragenlijst) {
+        for (UserVragenlijst uv : vragenlijsten) {
+            if (uv.getVragenlijst().equals(vragenlijst) && !uv.expired()) {
+                return true;
+            }
+        }
+        return false;
     }
 
-    public void setVragenlijsten(List<Vragenlijst> vragenlijsten) {
+
+    public void addVragenlijst(Vragenlijst vragenlijst) {
+        this.vragenlijsten.add(new UserVragenlijst(vragenlijst));
+    }
+
+    public void setVragenlijsten(List<UserVragenlijst> vragenlijsten) {
         this.vragenlijsten = vragenlijsten;
     }
 
@@ -89,5 +102,13 @@ public class User {
 
     public void setAdmin(boolean admin) {
         isAdmin = admin;
+    }
+
+    public void addQuiz(Quiz quiz){
+        quizManager.addQuiz(quiz);
+    }
+
+    public Quiz getQuiz(Vragenlijst vragenlijst){
+        return quizManager.getQuiz(vragenlijst);
     }
 }

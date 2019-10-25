@@ -22,6 +22,10 @@ public class Quiz {
         this.vragenlijst = vragenlijst;
     }
 
+    public boolean equals(Vragenlijst vragenlijst) {
+        return this.vragenlijst.equals(vragenlijst);
+    }
+
     public static Quiz getCurrentQuiz() {
         return currentQuiz;
     }
@@ -57,7 +61,7 @@ public class Quiz {
 
     public boolean next() {
         huidigeVraag++;
-        if ( huidigeVraag < vragen.size()) {
+        if (huidigeVraag < vragen.size()) {
             return true;
         } else {
             toggle();
@@ -66,17 +70,24 @@ public class Quiz {
     }
 
     private void berekenScore() {
-        score = App.getInstance().getPuntenTelling().bereken(aantalCorrect, aantalCorrect == vragen.size());
+        score = vragenlijst.bereken(aantalCorrect, aantalCorrect == vragen.size());
         if (highscore < score) highscore = score;
     }
 
     public void start() {
         this.vragen = vragenlijst.getVragen(10);
+        cleanup();
         toggle();
     }
 
     private void toggle() {
         this.playing = !this.playing;
+    }
+
+    private void cleanup(){
+        score = 0;
+        huidigeVraag = -1;
+        aantalCorrect = 0;
     }
 
     public void answer(String answer) {

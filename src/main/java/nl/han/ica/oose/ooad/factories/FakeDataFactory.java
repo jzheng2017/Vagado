@@ -2,9 +2,8 @@ package nl.han.ica.oose.ooad.factories;
 
 import nl.han.ica.oose.ooad.models.hierarchie.Onderwerp;
 import nl.han.ica.oose.ooad.models.hierarchie.Thema;
-import nl.han.ica.oose.ooad.models.puntentelling.MakkelijkPuntenTelling;
 import nl.han.ica.oose.ooad.models.users.User;
-import nl.han.ica.oose.ooad.models.users.UserManager;
+import nl.han.ica.oose.ooad.managers.UserManager;
 import nl.han.ica.oose.ooad.models.vragen.*;
 
 import java.util.ArrayList;
