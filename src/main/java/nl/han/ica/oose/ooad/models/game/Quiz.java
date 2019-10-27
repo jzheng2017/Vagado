@@ -1,11 +1,9 @@
 package nl.han.ica.oose.ooad.models.game;
 
-import nl.han.ica.oose.ooad.App;
-import nl.han.ica.oose.ooad.models.puntentelling.PuntenTelling;
-import nl.han.ica.oose.ooad.models.users.User;
 import nl.han.ica.oose.ooad.models.vragen.Vraag;
 import nl.han.ica.oose.ooad.models.vragen.Vragenlijst;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public class Quiz {
@@ -16,6 +14,8 @@ public class Quiz {
     private int score;
     private int aantalCorrect = 0;
     private int huidigeVraag = -1;
+    private long startTime;
+    private long finishTime;
     private boolean playing = false;
 
     public Quiz(Vragenlijst vragenlijst) {
@@ -70,7 +70,7 @@ public class Quiz {
     }
 
     private void berekenScore() {
-        score = vragenlijst.bereken(aantalCorrect, aantalCorrect == vragen.size());
+        score = vragenlijst.bereken(aantalCorrect, getTotalTime(),aantalCorrect == vragen.size());
         if (highscore < score) highscore = score;
     }
 
@@ -82,12 +82,19 @@ public class Quiz {
 
     private void toggle() {
         this.playing = !this.playing;
+        if (this.playing) {
+            startTime = System.currentTimeMillis();
+        } else {
+            finishTime = System.currentTimeMillis();
+        }
     }
 
     private void cleanup(){
         score = 0;
         huidigeVraag = -1;
         aantalCorrect = 0;
+        startTime = 0;
+        finishTime = 0;
     }
 
     public void answer(String answer) {
@@ -98,5 +105,17 @@ public class Quiz {
 
     public Vraag getHuidigeVraag() {
         return this.vragen.get(huidigeVraag);
+    }
+
+    public long getStartTime() {
+        return startTime;
+    }
+
+    public long getFinishTime() {
+        return finishTime;
+    }
+
+    public int getTotalTime(){
+        return (int)((finishTime - startTime) / 1000);
     }
 }

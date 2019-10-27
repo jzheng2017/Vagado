@@ -5,36 +5,32 @@ import nl.han.ica.oose.ooad.models.vragen.Vragenlijst;
 import java.util.List;
 
 public class Onderwerp {
-    private Thema thema;
     private String naam;
-    private List<Vragenlijst> vragenlijst;
+    private List<Vragenlijst> vragenlijsten;
 
-    public Onderwerp(Thema thema, String naam, List<Vragenlijst> vragenlijst) {
-        this.thema = thema;
+    public Onderwerp(String naam, List<Vragenlijst> vragenlijsten) {
         this.naam = naam;
-        this.vragenlijst = vragenlijst;
+        this.vragenlijsten = vragenlijsten;
     }
 
     public boolean equals(String s) {
         return naam.equalsIgnoreCase(s);
     }
 
-    public Thema getThema() {
-        return thema;
-    }
 
     public String toString(){
         return this.naam;
     }
 
     public Vragenlijst getVragenlijst(int index){
-        return vragenlijst.get(index);
+        return vragenlijsten.get(index);
     }
-    public List<Vragenlijst> getVragenlijst() {
-        return vragenlijst;
+    
+    public List<Vragenlijst> getVragenlijsten() {
+        return vragenlijsten;
     }
 
-    public void setVragenlijst(List<Vragenlijst> vragenlijst) {
-        this.vragenlijst = vragenlijst;
+    public void setVragenlijsten(List<Vragenlijst> vragenlijsten) {
+        this.vragenlijsten = vragenlijsten;
     }
 }

@@ -8,7 +8,7 @@ import nl.han.ica.oose.ooad.models.vragen.Vragenlijst;
 
 import java.util.List;
 
-public class BeheerView {
+public class BeheerView extends View{
     private Beheer beheer;
 
     public BeheerView(Beheer beheer) {
@@ -24,6 +24,7 @@ public class BeheerView {
     }
 
     public void invalid() {
+        System.out.println("Invalide keuze");
     }
 
     public void displayThema() {

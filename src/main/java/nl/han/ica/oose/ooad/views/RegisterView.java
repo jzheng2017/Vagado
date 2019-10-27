@@ -2,7 +2,7 @@ package nl.han.ica.oose.ooad.views;
 
 import nl.han.ica.oose.ooad.models.users.Register;
 
-public class RegisterView {
+public class RegisterView extends View{
     private Register register;
 
     public RegisterView(Register register){

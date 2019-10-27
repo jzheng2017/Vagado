@@ -3,14 +3,14 @@ package nl.han.ica.oose.ooad.states;
 import nl.han.ica.oose.ooad.StateMachine;
 import nl.han.ica.oose.ooad.controllers.WinkelController;
 import nl.han.ica.oose.ooad.enums.ControllerType;
-import nl.han.ica.oose.ooad.enums.SelectionState;
+import nl.han.ica.oose.ooad.enums.SelectionProcess;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class WinkelState extends State {
     private WinkelController winkelController;
-    private SelectionState proces;
+    private SelectionProcess proces;
     private Scanner scanner = new Scanner(System.in);
 
     public WinkelState(StateMachine stateMachine) {
@@ -20,8 +20,8 @@ public class WinkelState extends State {
     @Override
     protected void entry() {
         winkelController = (WinkelController) controllerManager.getController(ControllerType.Winkel);
-        winkelController.getWelcome();
-        proces = SelectionState.THEMA;
+        winkelController.welcomeMessage();
+        proces = SelectionProcess.THEMA;
     }
 
     @Override
@@ -32,26 +32,26 @@ public class WinkelState extends State {
                     winkelController.displayThemaList();
                     winkelController.leaveMessage();
                     if (winkelController.pickThema(scanner.nextInt())) {
-                        proces = SelectionState.ONDERWERP;
+                        proces = SelectionProcess.ONDERWERP;
                     }
                     break;
                 case ONDERWERP:
                     winkelController.displayOnderwerpList();
                     if (winkelController.pickOnderwerp(scanner.nextInt())) {
-                        proces = SelectionState.VRAGENLIJST;
+                        proces = SelectionProcess.VRAGENLIJST;
                     }
                     break;
                 case VRAGENLIJST:
                     winkelController.displayVragenlijst();
                     if (winkelController.buyVragenlijst(scanner.nextInt())) {
-                        proces = SelectionState.DONE;
+                        proces = SelectionProcess.DONE;
                     }
                     break;
                 case DONE:
                     String choice = scanner.nextLine();
                     winkelController.choice();
                     if (choice.equalsIgnoreCase("O")) {
-                        proces = SelectionState.THEMA;
+                        proces = SelectionProcess.THEMA;
                     } else if (choice.equalsIgnoreCase("M")) {
                         exit();
                     }

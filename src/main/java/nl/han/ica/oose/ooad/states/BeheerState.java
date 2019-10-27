@@ -3,14 +3,14 @@ package nl.han.ica.oose.ooad.states;
 import nl.han.ica.oose.ooad.StateMachine;
 import nl.han.ica.oose.ooad.controllers.BeheerController;
 import nl.han.ica.oose.ooad.enums.ControllerType;
-import nl.han.ica.oose.ooad.enums.SelectionState;
+import nl.han.ica.oose.ooad.enums.SelectionProcess;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class BeheerState extends State {
     private BeheerController beheerController;
-    private SelectionState proces;
+    private SelectionProcess proces;
     private Scanner scanner = new Scanner(System.in);
 
     public BeheerState(StateMachine stateMachine) {
@@ -22,9 +22,9 @@ public class BeheerState extends State {
         beheerController = (BeheerController) controllerManager.getController(ControllerType.Beheer);
         if (!beheerController.initial()) {
             stateMachine.setCurrentState(new MainMenuState(stateMachine));
-            proces = SelectionState.NONE;
+            proces = SelectionProcess.NONE;
         } else {
-            proces = SelectionState.THEMA;
+            proces = SelectionProcess.THEMA;
         }
     }
 
@@ -36,19 +36,19 @@ public class BeheerState extends State {
                     beheerController.displayThemaList();
                     beheerController.leaveMessage();
                     if (beheerController.pickThema(scanner.nextInt())) {
-                        proces = SelectionState.ONDERWERP;
+                        proces = SelectionProcess.ONDERWERP;
                     }
                     break;
                 case ONDERWERP:
                     beheerController.displayOnderwerpList();
                     if (beheerController.pickOnderwerp(scanner.nextInt())) {
-                        proces = SelectionState.VRAGENLIJST;
+                        proces = SelectionProcess.VRAGENLIJST;
                     }
                     break;
                 case VRAGENLIJST:
                     beheerController.displayVragenlijst();
                     if (beheerController.pickVragenlijst(scanner.nextInt())) {
-                        proces = SelectionState.EDIT;
+                        proces = SelectionProcess.EDIT;
                         scanner.nextLine(); //skip new line
                     }
                     break;
@@ -56,14 +56,14 @@ public class BeheerState extends State {
                     beheerController.displayEditCurrentVragenlijst();
                     if (beheerController.updateVragenlijst(scanner.nextLine())) {
                         beheerController.displayCurrentVragenlijst();
-                        proces = SelectionState.DONE;
+                        proces = SelectionProcess.DONE;
                     }
                     break;
                 case DONE:
                     beheerController.choice();
                     String choice = scanner.nextLine();
                     if (choice.equalsIgnoreCase("O")) {
-                        proces = SelectionState.THEMA;
+                        proces = SelectionProcess.THEMA;
                     } else if (choice.equalsIgnoreCase("M")) {
                         exit();
                     }

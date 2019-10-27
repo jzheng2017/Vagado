@@ -1,6 +1,7 @@
 package nl.han.ica.oose.ooad.models.vragen;
 
 import nl.han.ica.oose.ooad.models.puntentelling.MakkelijkPuntenTelling;
+import nl.han.ica.oose.ooad.models.puntentelling.MoeilijkPuntenTelling;
 import nl.han.ica.oose.ooad.models.puntentelling.PuntenTelling;
 
 import java.util.List;
@@ -57,7 +58,7 @@ public class Vragenlijst {
         this.naam = naam;
     }
 
-    public int bereken(int aantalCorrect, boolean allesCorrect) {
-       return puntenTelling.bereken(aantalCorrect, allesCorrect);
+    public int bereken(int aantalCorrect, int tijd, boolean allesCorrect) {
+       return puntenTelling.bereken(aantalCorrect, tijd, allesCorrect);
     }
 }

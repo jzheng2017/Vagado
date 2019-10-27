@@ -2,7 +2,7 @@ package nl.han.ica.oose.ooad.views;
 
 import nl.han.ica.oose.ooad.models.users.User;
 
-public class MainMenuView {
+public class MainMenuView extends View {
 
     public void options() {
         System.out.println("1. Speel quiz");

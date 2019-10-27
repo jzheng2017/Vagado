@@ -28,7 +28,7 @@ public abstract class ThemaHandler {
     }
 
     public List<Vragenlijst> getVragenlijst() {
-        return themaList.get(currentThema - 1).getOnderwerpen().get(currentOnderwerp - 1).getVragenlijst();
+        return themaList.get(currentThema - 1).getOnderwerpen().get(currentOnderwerp - 1).getVragenlijsten();
     }
 
 

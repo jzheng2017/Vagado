@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class QuizController extends Controller {
     private Scanner scanner = new Scanner(System.in);
     private Vragenlijst vragenlijst;
-    private List<Vragenlijst> vragenlijstList;
+    private List<Vragenlijst> vragenlijsten;
     private Quiz quiz;
     private QuizView quizView;
     private QuizSelectionView quizSelectionView;
@@ -28,17 +28,17 @@ public class QuizController extends Controller {
     }
 
     public int startSelection() {
-        vragenlijstList = User.getCurrentUser().getVragenlijsten();
-        quizSelectionView = new QuizSelectionView(vragenlijstList);
+        vragenlijsten = User.getCurrentUser().getVragenlijsten();
+        quizSelectionView = new QuizSelectionView(vragenlijsten);
         if (authorized()) {
             quizSelectionView.display();
             int choice = scanner.nextInt();
             scanner.nextLine(); //skip the line because nextInt() does not consume the newline input created by hitting "Enter"
-            if (choice < 0 || choice > vragenlijstList.size()) {
+            if (choice < 0 || choice > vragenlijsten.size()) {
                 quizSelectionView.invalid();
                 return 0;
             } else {
-                vragenlijst = vragenlijstList.get(choice - 1);
+                vragenlijst = vragenlijsten.get(choice - 1);
                 if (!User.getCurrentUser().expired(vragenlijst)) {
                     quizSelectionView.expired();
                     return 0;

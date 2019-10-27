@@ -22,7 +22,7 @@ public class WinkelController extends Controller {
         return User.loggedIn();
     }
 
-    public void getWelcome() {
+    public void welcomeMessage() {
         winkelView.welcome();
     }
 
@@ -66,7 +66,7 @@ public class WinkelController extends Controller {
             if (!User.getCurrentUser().expired(vragenlijst)) {
                 if (User.getCurrentUser().verminderSaldo(vragenlijst.getPrijs())) {
                     User.getCurrentUser().addVragenlijst(vragenlijst);
-                    winkelView.successfull(vragenlijst.getPrijs(), User.getCurrentUser().getSaldo());
+                    winkelView.successful(vragenlijst.getPrijs(), User.getCurrentUser().getSaldo());
                     return true;
                 } else {
                     winkelView.insufficient();

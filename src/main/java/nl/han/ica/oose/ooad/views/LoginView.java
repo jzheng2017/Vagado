@@ -2,7 +2,7 @@ package nl.han.ica.oose.ooad.views;
 
 import nl.han.ica.oose.ooad.models.users.Login;
 
-public class LoginView {
+public class LoginView extends View{
     private Login login;
 
     public LoginView(Login login) {

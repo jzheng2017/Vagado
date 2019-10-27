@@ -4,7 +4,7 @@ import nl.han.ica.oose.ooad.models.vragen.Vragenlijst;
 
 import java.util.List;
 
-public class QuizSelectionView {
+public class QuizSelectionView extends View{
     private List<Vragenlijst> vragenlijstList;
 
     public QuizSelectionView(List<Vragenlijst> vragenlijstCollection) {

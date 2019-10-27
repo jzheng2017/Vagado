@@ -26,14 +26,14 @@ public class FakeDataFactory {
             List<Vragenlijst> vragenlijst = new ArrayList<>();
             vragenlijst.add(getMixedVragenlijst());
             vragenlijst.add(getMixedVragenlijst2());
-            onderwerpen.add(new Onderwerp(list.get(0), "Marvel", vragenlijst));
+            onderwerpen.add(new Onderwerp("Marvel", vragenlijst));
             list.get(0).setOnderwerpen(onderwerpen);
             list.add(new Thema("Sports"));
             List<Onderwerp> onderwerpen2 = new ArrayList<>();
 
             List<Vragenlijst> vragenlijst2 = new ArrayList<>();
             vragenlijst2.add(getMixedVragenlijst3());
-            onderwerpen2.add(new Onderwerp(list.get(1), "Football", vragenlijst2));
+            onderwerpen2.add(new Onderwerp( "Football", vragenlijst2));
             list.get(1).setOnderwerpen(onderwerpen2);
             themaList = list;
         }

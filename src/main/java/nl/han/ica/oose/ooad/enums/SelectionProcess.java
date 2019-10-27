@@ -1,6 +1,6 @@
 package nl.han.ica.oose.ooad.enums;
 
-public enum SelectionState {
+public enum SelectionProcess {
     NONE,
     THEMA,
     ONDERWERP,

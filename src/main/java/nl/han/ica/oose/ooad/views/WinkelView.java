@@ -7,7 +7,7 @@ import nl.han.ica.oose.ooad.models.vragen.Vragenlijst;
 
 import java.util.List;
 
-public class WinkelView {
+public class WinkelView extends View{
     private Winkel winkel;
 
     public WinkelView(Winkel winkel) {
@@ -19,7 +19,7 @@ public class WinkelView {
     }
 
     public void welcome() {
-        System.out.println("Welkom in de winkel, kies een vragenlijst door het nummer in te voeren.");
+        System.out.println(language.translate("Welkom in de winkel, kies een vragenlijst door het nummer in te voeren."));
     }
 
     public void displayThema() {
@@ -56,7 +56,7 @@ public class WinkelView {
         System.out.println("Niet genoeg saldo!");
     }
 
-    public void successfull(int price, int balance) {
+    public void successful(int price, int balance) {
         System.out.println("De vragenlijst is succesvol toegevoegd aan uw vragenlijst collectie. " +
                 "Het aankoopbedrag is afgeschreven van uw saldo. Uw aankoopbedrag was: "
                 + price + ". Uw saldo is verlaagd van " + (balance + price) + " naar " + balance);

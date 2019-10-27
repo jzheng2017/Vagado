@@ -21,11 +21,11 @@ public class BeheerController extends Controller {
     }
 
     @Override
-    boolean authorized() {
+    protected boolean authorized() {
         return User.isAdmin();
     }
 
-
+    //authorized or not
     public boolean initial() {
         if (authorized()) {
             beheerView.welcome();
