@@ -39,7 +39,7 @@ public class QuizController extends Controller {
                 return 0;
             } else {
                 vragenlijst = vragenlijsten.get(choice - 1);
-                if (!User.getCurrentUser().expired(vragenlijst)) {
+                if (User.getCurrentUser().expired(vragenlijst)) {
                     quizSelectionView.expired();
                     return 0;
                 }

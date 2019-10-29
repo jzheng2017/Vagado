@@ -60,7 +60,7 @@ public class BeheerView extends View{
     public void displayEditCurrentVragenlijst() {
         System.out.println("Je hebt gekozen voor deze vragenlijst: ");
         System.out.println("====================");
-        displayCurrentVragenlijst();
+        System.out.println("Naam: " + beheer.getCurrentVragenlijst());
         System.out.println("====================");
         System.out.println("Voer een nieuw naam in:");
     }

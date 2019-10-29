@@ -78,9 +78,13 @@ public class User {
         }
     }
 
+    public void verhoogSaldo(int aantal){
+        saldo += aantal;
+    }
+
     public boolean expired(Vragenlijst vragenlijst) {
         for (UserVragenlijst uv : vragenlijsten) {
-            if (uv.getVragenlijst().equals(vragenlijst) && !uv.expired()) {
+            if (uv.getVragenlijst().equals(vragenlijst) && uv.expired()) {
                 return true;
             }
         }

@@ -14,6 +14,10 @@ public abstract class Vraag<T> {
 
     public abstract List<T> getAntwoorden();
 
+    public abstract void addAntwoord(T antwoord);
+
+    public abstract void removeAntwoord(T antwoord);
+
     public String toString(){
         return vraag;
     }
