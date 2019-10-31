@@ -5,6 +5,11 @@ import nl.han.ica.oose.ooad.enums.ControllerType;
 
 public class ControllerFactory {
 
+    /**
+     * Gets a controller based on the passed in Controller Type
+     * @param type
+     * @return Controller
+     */
     public static Controller getController(ControllerType type) {
         switch (type) {
             case Login:

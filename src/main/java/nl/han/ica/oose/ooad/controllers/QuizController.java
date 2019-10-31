@@ -28,6 +28,10 @@ public class QuizController extends Controller {
         return User.loggedIn() && User.getCurrentUser().getVragenlijsten().size() > 0;
     }
 
+    /**
+     * Starts a process to select a vragenlijst
+     * @return integer, a status to see whether the process is successful
+     */
     public int startSelection() {
         if (authorized()) {
             try {
@@ -58,6 +62,9 @@ public class QuizController extends Controller {
         }
     }
 
+    /**
+     * Starts a quiz
+     */
     public void startQuiz() {
         if (authorized()) {
             quiz = User.getCurrentUser().getQuiz(vragenlijst);
@@ -73,6 +80,9 @@ public class QuizController extends Controller {
         }
     }
 
+    /**
+     * Plays the quiz, a question will be displayed and given a chance to answer
+     */
     public void playQuiz() {
         if (quiz.next()) {
             quizView.display();
@@ -80,22 +90,38 @@ public class QuizController extends Controller {
         }
     }
 
+    /**
+     * Whether the quiz is still ongoing
+     * @return boolean
+     */
     public boolean isPlaying() {
         return quiz.isPlaying();
     }
 
+    /**
+     * Display this message when a vragenlijst has been succesfully selected
+     */
     public void selectionExitMessage() {
         quizSelectionView.exit();
     }
 
+    /**
+     * Displays message that the user can leave anytime
+     */
     public void leave() {
         quizSelectionView.leave();
     }
 
+    /**
+     * Displays message when the user is leaving the state
+     */
     public void endMessage() {
         quizView.end();
     }
 
+    /**
+     * Displays message during the process to let the user know it can leave prematurily
+     */
     public void premature() {
         quizSelectionView.premature();
     }

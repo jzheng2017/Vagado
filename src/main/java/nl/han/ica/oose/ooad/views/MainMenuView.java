@@ -4,6 +4,9 @@ import nl.han.ica.oose.ooad.models.users.User;
 
 public class MainMenuView extends View {
 
+    /**
+     * Display all options
+     */
     public void options() {
         System.out.println("1. Speel quiz");
         System.out.println("2. Winkel");

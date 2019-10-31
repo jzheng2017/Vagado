@@ -11,6 +11,9 @@ public class QuizSelectionView extends View{
         this.vragenlijstList = vragenlijstCollection;
     }
 
+    /**
+     * Displays all vragenlijst the user owns
+     */
     public void display() {
         System.out.println("Kies uw vragenlijst.");
         for (int i = 0; i < vragenlijstList.size(); i++) {
@@ -22,6 +25,9 @@ public class QuizSelectionView extends View{
         this.vragenlijstList = vragenlijstList;
     }
 
+    /**
+     * Unauthorized action message
+     */
     public static void unauthorized() {
         System.out.println("Je mag deze actie niet uitvoeren.  Je bent niet ingelogd of je hebt geen vragenlijst(en). Je wordt terug gekeerd naar het start scherm.");
     }
@@ -30,10 +36,16 @@ public class QuizSelectionView extends View{
         System.out.println("Er is een selectie gemaakt. De quiz gaat nu beginnen.");
     }
 
+    /**
+     * Invalid choice
+     */
     public void invalid() {
         System.out.println("Invalide keuze. Kies tussen: 1 en " + vragenlijstList.size());
     }
 
+    /**
+     * Message to let the user know the selected question is expired
+     */
     public void expired() {
         System.out.println("De vragenlijst die je hebt gekozen is verlopen. Om het te kunnen spelen moet je het vernieuwen. Doe dat door het opnieuw te kopen in de winkel.");
     }

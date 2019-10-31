@@ -15,10 +15,18 @@ public abstract class ThemaHandler {
         this.themaList = themaList;
     }
 
+    /**
+     * Get list of theme
+     * @return list
+     */
     public List<Thema> getThemaList() {
         return themaList;
     }
 
+    /**
+     * Get list of subjects
+     * @return list
+     */
     public List<Onderwerp> getOnderwerpList() {
         return themaList.get(currentThema - 1).getOnderwerpen();
     }
@@ -27,11 +35,19 @@ public abstract class ThemaHandler {
         this.themaList = themaList;
     }
 
+    /**
+     * Get list of vragenlijst based on the instance variables
+     * @return list of vragenlijst
+     */
     public List<Vragenlijst> getVragenlijst() {
         return themaList.get(currentThema - 1).getOnderwerpen().get(currentOnderwerp - 1).getVragenlijsten();
     }
 
 
+    /**
+     * Gets current theme
+     * @return current theme
+     */
     public int getCurrentThema() {
         return currentThema;
     }
@@ -40,6 +56,10 @@ public abstract class ThemaHandler {
         this.currentThema = currentThema;
     }
 
+    /**
+     * Gets current subject
+     * @return current subject
+     */
     public int getCurrentOnderwerp() {
         return currentOnderwerp;
     }

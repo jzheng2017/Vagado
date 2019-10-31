@@ -15,6 +15,11 @@ public class ControllerManager {
         getAllControllers();
     }
 
+    /**
+     * Gets the controller based on the Controller Type
+     * @param type
+     * @return Controller
+     */
     public Controller getController(ControllerType type) {
         for (Controller controller : controllers) {
             if (controller.getType().equals(type)) {
@@ -24,6 +29,10 @@ public class ControllerManager {
         return null;
     }
 
+    /**
+     * Gets an instance of ControllerManager
+     * @return ControllerManager
+     */
     public static ControllerManager getInstance() {
         if (controllerManager == null) {
             controllerManager = new ControllerManager();
@@ -31,6 +40,9 @@ public class ControllerManager {
         return controllerManager;
     }
 
+    /**
+     * Gets all known controllers from the factory and adds it to the list
+     */
     private void getAllControllers() {
         for (ControllerType type : ControllerType.values()) {
             Controller controller = ControllerFactory.getController(type);

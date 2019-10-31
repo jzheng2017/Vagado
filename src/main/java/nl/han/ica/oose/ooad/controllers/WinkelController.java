@@ -22,14 +22,25 @@ public class WinkelController extends Controller {
         return User.loggedIn();
     }
 
+    /**
+     * Display welcome message
+     */
     public void welcomeMessage() {
         winkelView.welcome();
     }
 
+    /**
+     * Display all themes
+     */
     public void displayThemaList() {
         winkelView.displayThema();
     }
 
+    /**
+     * Sets the current theme based on the given parameter
+     * @param num
+     * @return boolean
+     */
     public boolean pickThema(int num) {
         if (num < 0 || num > winkel.getThemaList().size()) {
             winkelView.invalid();
@@ -40,6 +51,11 @@ public class WinkelController extends Controller {
         }
     }
 
+    /**
+     * Sets the current subject based on the given parameter
+     * @param num
+     * @return booelean
+     */
     public boolean pickOnderwerp(int num) {
         if (num < 0 || num > winkel.getOnderwerpList().size()) {
             winkelView.invalid();
@@ -50,15 +66,25 @@ public class WinkelController extends Controller {
         }
     }
 
+    /**
+     * Display all subject based on current theme
+     */
     public void displayOnderwerpList() {
         winkelView.displayOnderwerpList();
     }
 
+    /**
+     * Display list of vragenlijst based on current theme and subject
+     */
     public void displayVragenlijst() {
         winkelView.displayVragenlijst();
     }
 
-
+    /**
+     * Purchase the vragenlijst based on the given parameter.
+     * @param currentVragenlijst
+     * @return boolean, whether the transaction was succesful or not.
+     */
     public boolean buyVragenlijst(int currentVragenlijst) {
         currentVragenlijst -= 1;
         if (currentVragenlijst >= 0 && currentVragenlijst < winkel.getVragenlijst().size()) {
@@ -82,14 +108,23 @@ public class WinkelController extends Controller {
         }
     }
 
+    /**
+     * Message to be displayed after succesful transaction
+     */
     public void choice() {
         winkelView.choice();
     }
 
+    /**
+     * Message to let the user know it can leave anytime
+     */
     public void leaveMessage() {
         winkelView.leave();
     }
 
+    /**
+     * Message to be displayed when user leaves the shop.
+     */
     public void exitMessage() {
         winkelView.exit();
     }

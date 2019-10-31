@@ -17,6 +17,10 @@ public class FakeDataFactory {
         userManager.add(new User("jiankai", "zheng", true));
     }
 
+    /**
+     * Gets a list of thema
+     * @return list
+     */
     public static List<Thema> getThemaFilledWithSubjects() {
         if (themaList == null) {
             List<Thema> list = new ArrayList<>();
@@ -40,6 +44,10 @@ public class FakeDataFactory {
         return themaList;
     }
 
+    /**
+     * Gets a list of questions mixed with open questions and multiple choice questions
+     * @return list of questions
+     */
     public static Vragenlijst getMixedVragenlijst() {
         List<Vraag> vragen = new ArrayList<>();
         List<OpenVraagAntwoord> openAntwoorden = new ArrayList<>();
@@ -63,6 +71,10 @@ public class FakeDataFactory {
         return new Vragenlijst(new VraagCollection(vragen), "marvel vragenlijst", 5);
     }
 
+    /**
+     * Gets a list of questions mixed with open questions and multiple choice questions
+     * @return list of questions
+     */
     public static Vragenlijst getMixedVragenlijst2() {
         List<Vraag> vragen = new ArrayList<>();
         List<OpenVraagAntwoord> openAntwoorden = new ArrayList<>();
@@ -86,6 +98,10 @@ public class FakeDataFactory {
         return new Vragenlijst(new VraagCollection(vragen), "marvel vragenlijst 2", 8);
     }
 
+    /**
+     * Gets a list of questions mixed with open questions and multiple choice questions
+     * @return list of questions
+     */
     public static Vragenlijst getMixedVragenlijst3() {
         List<Vraag> vragen = new ArrayList<>();
         List<OpenVraagAntwoord> openAntwoorden = new ArrayList<>();

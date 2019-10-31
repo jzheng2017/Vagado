@@ -12,14 +12,22 @@ public class MeerkeuzeAntwoord implements Antwoord {
     }
 
     @Override
-    public boolean equals(String s) {
-        return keuze.equalsIgnoreCase(s) || antwoord.equalsIgnoreCase(s);
+    public boolean equals(String answer) {
+        return keuze.equalsIgnoreCase(answer) || antwoord.equalsIgnoreCase(answer);
     }
 
+    /**
+     * Returns the whether the answer is correct
+     * @return boolean
+     */
     public boolean isCorrect(){
         return isCorrect;
     }
 
+    /**
+     * Displays the answer in a nice format
+     * @return answer in correct format
+     */
     public String toString(){
         return keuze + ". " + antwoord;
     }

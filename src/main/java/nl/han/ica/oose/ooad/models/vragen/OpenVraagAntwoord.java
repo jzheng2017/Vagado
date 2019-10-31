@@ -8,10 +8,14 @@ public class OpenVraagAntwoord implements Antwoord {
     }
 
     @Override
-    public boolean equals(String s) {
-        return antwoord.equalsIgnoreCase(s);
+    public boolean equals(String answer) {
+        return antwoord.equalsIgnoreCase(answer);
     }
 
+    /**
+     * Displays the answer in a nice format
+     * @return answer in correct format
+     */
     public String toString(){
         return this.antwoord;
     }

@@ -10,6 +10,7 @@ public class OpenVraag extends Vraag<OpenVraagAntwoord> {
         this.antwoorden = antwoorden;
     }
 
+
     @Override
     public boolean isAntwoordCorrect(String antwoord) {
         for (OpenVraagAntwoord a : antwoorden) {

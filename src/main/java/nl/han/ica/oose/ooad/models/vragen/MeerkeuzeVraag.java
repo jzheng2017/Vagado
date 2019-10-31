@@ -10,6 +10,7 @@ public class MeerkeuzeVraag extends Vraag<MeerkeuzeAntwoord> {
         this.antwoorden = antwoorden;
     }
 
+
     @Override
     public boolean isAntwoordCorrect(String antwoord) {
         for (MeerkeuzeAntwoord a : antwoorden) {

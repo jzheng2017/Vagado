@@ -14,6 +14,11 @@ public class RegisterController extends Controller {
         setType(ControllerType.Register);
     }
 
+    /**
+     * Register the guest based on the username and password given
+     * @param username
+     * @param password
+     */
     public void register(String username, String password) {
         Register register = new Register(username, password);
         registerView = new RegisterView(register);

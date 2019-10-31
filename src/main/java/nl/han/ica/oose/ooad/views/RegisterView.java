@@ -9,6 +9,9 @@ public class RegisterView extends View{
         this.register = register;
     }
 
+    /**
+     * Succesful register message
+     */
     public void successful(){
         System.out.println("Je bent succesvol geregistreerd!");
         System.out.println("Logingegevens:");
@@ -16,6 +19,9 @@ public class RegisterView extends View{
         System.out.println("Password: " + register.getPassword());
     }
 
+    /**
+     * Username has already been taken message
+     */
     public void taken(){
         System.out.println("Jouw gekozen username [" + register.getUsername() + "] is al in gebruik. Kies een andere username.");
     }

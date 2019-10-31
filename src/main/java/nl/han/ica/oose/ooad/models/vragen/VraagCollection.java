@@ -11,6 +11,12 @@ public class VraagCollection {
         this.vragen = vragen;
     }
 
+    /**
+     * Gets a list of questions, the length of the list is based on the passed in parameter.
+     * If the list is shorter than the given parameter then the parameter value will be changed accordingly.
+     * @param aantal
+     * @return list of questions
+     */
     public List<Vraag> getVragen(int aantal) {
         List<Vraag> vragen = new ArrayList<>();
         Random rnd = new Random();
@@ -30,6 +36,10 @@ public class VraagCollection {
         return vragen;
     }
 
+    /**
+     * Gets all questions
+     * @return list of questions
+     */
     public List<Vraag> getVragen(){
         return this.vragen;
     }

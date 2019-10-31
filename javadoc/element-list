@@ -1,0 +1,13 @@
+nl.han.ica.oose.ooad
+nl.han.ica.oose.ooad.controllers
+nl.han.ica.oose.ooad.enums
+nl.han.ica.oose.ooad.factories
+nl.han.ica.oose.ooad.languages
+nl.han.ica.oose.ooad.managers
+nl.han.ica.oose.ooad.models.game
+nl.han.ica.oose.ooad.models.hierarchie
+nl.han.ica.oose.ooad.models.puntentelling
+nl.han.ica.oose.ooad.models.users
+nl.han.ica.oose.ooad.models.vragen
+nl.han.ica.oose.ooad.states
+nl.han.ica.oose.ooad.views

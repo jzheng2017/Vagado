@@ -13,6 +13,12 @@ public class LoginController extends Controller {
         setType(ControllerType.Login);
     }
 
+    /**
+     * Logs the user in based on the username and password
+     * @param username
+     * @param password
+     * @return boolean, whether user has succesfully logged in or not
+     */
     public boolean login(String username, String password) {
         UserManager userManager = UserManager.getInstance();
         if (authorized()) {
@@ -37,11 +43,17 @@ public class LoginController extends Controller {
         return !User.loggedIn();
     }
 
+    /**
+     * Message to be displayed when entering the login state
+     */
     public void entryMessage() {
         LoginView.notLoggedIn();
         LoginView.choice();
     }
 
+    /**
+     * Message to be displayed when succesfully logged in
+     */
     public void exitMessage() {
         LoginView.successful();
         loginView.welcome();
