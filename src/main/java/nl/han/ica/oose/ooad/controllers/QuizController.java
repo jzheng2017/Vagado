@@ -7,6 +7,7 @@ import nl.han.ica.oose.ooad.models.vragen.Vragenlijst;
 import nl.han.ica.oose.ooad.views.QuizSelectionView;
 import nl.han.ica.oose.ooad.views.QuizView;
 
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -23,30 +24,36 @@ public class QuizController extends Controller {
     }
 
     @Override
-    protected boolean authorized() {
+    public boolean authorized() {
         return User.loggedIn() && User.getCurrentUser().getVragenlijsten().size() > 0;
     }
 
     public int startSelection() {
-        vragenlijsten = User.getCurrentUser().getVragenlijsten();
-        quizSelectionView = new QuizSelectionView(vragenlijsten);
         if (authorized()) {
-            quizSelectionView.display();
-            int choice = scanner.nextInt();
-            scanner.nextLine(); //skip the line because nextInt() does not consume the newline input created by hitting "Enter"
-            if (choice < 0 || choice > vragenlijsten.size()) {
-                quizSelectionView.invalid();
-                return 0;
-            } else {
-                vragenlijst = vragenlijsten.get(choice - 1);
-                if (User.getCurrentUser().expired(vragenlijst)) {
-                    quizSelectionView.expired();
+            try {
+                vragenlijsten = User.getCurrentUser().getVragenlijsten();
+                quizSelectionView = new QuizSelectionView(vragenlijsten);
+                quizSelectionView.leave();
+                quizSelectionView.display();
+                int choice = scanner.nextInt();
+                scanner.nextLine(); //skip the line because nextInt() does not consume the newline input created by hitting "Enter"
+                if (choice < 0 || choice > vragenlijsten.size()) {
+                    quizSelectionView.invalid();
                     return 0;
+                } else {
+                    vragenlijst = vragenlijsten.get(choice - 1);
+                    if (User.getCurrentUser().expired(vragenlijst)) {
+                        quizSelectionView.expired();
+                        return 0;
+                    }
+                    return 1;
                 }
-                return 1;
+            } catch (InputMismatchException e) {
+                quizSelectionView.premature();
+                return -1;
             }
         } else {
-            quizSelectionView.unauthorized();
+            QuizSelectionView.unauthorized();
             return -1;
         }
     }
@@ -62,7 +69,7 @@ public class QuizController extends Controller {
             quizView = new QuizView(quiz);
             quiz.start();
         } else {
-            quizSelectionView.unauthorized();
+            quizView.unauthorized();
         }
     }
 
@@ -81,7 +88,15 @@ public class QuizController extends Controller {
         quizSelectionView.exit();
     }
 
+    public void leave() {
+        quizSelectionView.leave();
+    }
+
     public void endMessage() {
         quizView.end();
+    }
+
+    public void premature() {
+        quizSelectionView.premature();
     }
 }

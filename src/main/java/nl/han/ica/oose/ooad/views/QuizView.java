@@ -15,9 +15,8 @@ public class QuizView extends View{
     }
 
     public void unauthorized() {
-        System.out.println("Je mag deze actie niet uitvoeren. Je moet eerst inloggen.");
+        System.out.println("Je mag deze actie niet uitvoeren.  Je bent niet ingelogd of je hebt geen vragenlijst(en). Je wordt terug gekeerd naar het start scherm.");
     }
-
     public void end() {
         System.out.println("Het spel is geeindigd. Je hebt " + quiz.getAantalCorrect() + " van de " + quiz.getVragen().size() + " correct.");
         System.out.println("Tijd over gedaan: " + quiz.getTotalTime() + "s");

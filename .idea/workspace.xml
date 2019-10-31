@@ -2,16 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41f771b2-fff3-441f-a48b-24344695118a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/controllers/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/controllers/QuizController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/controllers/QuizController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/models/puntentelling/MakkelijkPuntenTelling.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/models/puntentelling/MakkelijkPuntenTelling.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/models/puntentelling/MoeilijkPuntenTelling.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/models/puntentelling/MoeilijkPuntenTelling.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/controllers/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/controllers/RegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/controllers/WinkelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/controllers/WinkelController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/models/users/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/models/users/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/models/vragen/MeerkeuzeVraag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/models/vragen/MeerkeuzeVraag.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/models/vragen/OpenVraag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/models/vragen/OpenVraag.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/models/vragen/Vraag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/models/vragen/Vraag.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/views/BeheerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/views/BeheerView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/Vagado.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/models/vragen/Vragenlijst.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/models/vragen/Vragenlijst.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/states/MainMenuState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/states/MainMenuState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/states/SelectionState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/states/SelectionState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/states/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/states/State.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/views/QuizSelectionView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/views/QuizSelectionView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/views/QuizView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/oose/ooad/views/QuizView.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,8 +26,6 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
-        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -31,36 +33,15 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
-    </option>
-  </component>
-  <component name="ProjectId" id="1SC3jhpDmHVNKDwQSsIh5VDHnDf" />
+  <component name="ProjectId" id="1SvPwHRenSUl7axhxQs6WeoPnLN" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../LabExperimentSecurity/pom.xml" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="nl.han.ica.oose.ooad.models.game" />
-      <recent name="nl.han.ica.oose.ooad.models.users" />
-      <recent name="nl.han.ica.oose.ooad.views" />
-      <recent name="nl.han.ica.oose.ooad.models.hierarchie" />
-      <recent name="nl.han.ica.oose.ooad.states" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Jiankai\IdeaProjects\Vagado\src\main\resources" />
-      <recent name="C:\Users\Jiankai\IdeaProjects\Vagado\src\main\java\nl\han\ica\oose\ooad" />
-    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -74,7 +55,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Vagado">
     <configuration name="Vagado" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="nl.han.ica.oose.ooad.Vagado" />
       <module name="Vagado" />
@@ -88,9 +69,77 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SelectionStateTest.stateEntryCallsControllerManagerForController" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Vagado" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="states.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="states" />
+      <option name="MAIN_CLASS_NAME" value="states.SelectionStateTest" />
+      <option name="METHOD_NAME" value="stateEntryCallsControllerManagerForController" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SelectionStateTest.stateEntryCallsControllerManagerForQuizController" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Vagado" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="states.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="states" />
+      <option name="MAIN_CLASS_NAME" value="states.SelectionStateTest" />
+      <option name="METHOD_NAME" value="stateEntryCallsControllerManagerForQuizController" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SelectionStateTest.stateLoopCallsStartSelection" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Vagado" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="states.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="states" />
+      <option name="MAIN_CLASS_NAME" value="states.SelectionStateTest" />
+      <option name="METHOD_NAME" value="stateLoopCallsStartSelection" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SelectionStateTest.stateLoopCallsStartSelectionAndReturns1CallsExitAndChangesStateToQuizState" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Vagado" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="states.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="states" />
+      <option name="MAIN_CLASS_NAME" value="states.SelectionStateTest" />
+      <option name="METHOD_NAME" value="stateLoopCallsStartSelectionAndReturns1CallsExitAndChangesStateToQuizState" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Vagado" />
+        <item itemvalue="JUnit.SelectionStateTest.stateLoopCallsStartSelectionAndReturns1CallsExitAndChangesStateToQuizState" />
+        <item itemvalue="JUnit.SelectionStateTest.stateLoopCallsStartSelection" />
+        <item itemvalue="JUnit.SelectionStateTest.stateEntryCallsControllerManagerForQuizController" />
+        <item itemvalue="JUnit.SelectionStateTest.stateEntryCallsControllerManagerForController" />
       </list>
     </recent_temporary>
   </component>
@@ -100,23 +149,12 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="41f771b2-fff3-441f-a48b-24344695118a" name="Default Changelist" comment="" />
-      <created>1571053886478</created>
+      <created>1572441333971</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1571053886478</updated>
-      <workItem from="1571053889683" duration="5338000" />
-      <workItem from="1571094069862" duration="69000" />
-      <workItem from="1571226277921" duration="22831000" />
-      <workItem from="1571311073476" duration="8133000" />
-      <workItem from="1571349840694" duration="600000" />
-      <workItem from="1571584157788" duration="26930000" />
-      <workItem from="1571684693766" duration="13680000" />
-      <workItem from="1571764703834" duration="9236000" />
-      <workItem from="1571863749385" duration="58000" />
-      <workItem from="1571949875603" duration="5738000" />
-      <workItem from="1572002898518" duration="5099000" />
-      <workItem from="1572196602154" duration="11870000" />
-      <workItem from="1572251137789" duration="14121000" />
+      <updated>1572441333971</updated>
+      <workItem from="1572441337877" duration="13253000" />
+      <workItem from="1572516255338" duration="2810000" />
     </task>
     <servers />
   </component>

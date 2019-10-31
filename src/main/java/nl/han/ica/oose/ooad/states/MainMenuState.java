@@ -31,7 +31,7 @@ public class MainMenuState extends State {
                     stateMachine.setCurrentState(new SelectionState(stateMachine));
                 } else if (choice == 2) {
                     stateMachine.setCurrentState(new WinkelState(stateMachine));
-                } else if (choice == 3) {
+                } else {
                     stateMachine.setCurrentState(new BeheerState(stateMachine));
                 }
             } else {

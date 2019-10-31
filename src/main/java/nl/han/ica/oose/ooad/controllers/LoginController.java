@@ -8,6 +8,7 @@ import nl.han.ica.oose.ooad.views.LoginView;
 
 public class LoginController extends Controller {
     private LoginView loginView;
+
     public LoginController() {
         setType(ControllerType.Login);
     }
@@ -17,6 +18,7 @@ public class LoginController extends Controller {
         if (authorized()) {
             loginView = new LoginView(new Login(username, password));
             User user = userManager.getByUsername(username);
+            if (!user.getPassword().equals(password)) user = null;
             if (user != null) {
                 User.setCurrentUser(user);
                 return true;
@@ -35,7 +37,7 @@ public class LoginController extends Controller {
         return !User.loggedIn();
     }
 
-    public void entryMessage(){
+    public void entryMessage() {
         LoginView.notLoggedIn();
         LoginView.choice();
     }

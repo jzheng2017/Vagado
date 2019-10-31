@@ -91,6 +91,14 @@ public class User {
         return false;
     }
 
+    public boolean hasVragenlijst(Vragenlijst vragenlijst) {
+        for (UserVragenlijst uv : vragenlijsten) {
+            if (uv.getVragenlijst().equals(vragenlijst)) {
+                return true;
+            }
+        }
+        return false;
+    }
 
     public void addVragenlijst(Vragenlijst vragenlijst) {
         this.vragenlijsten.add(new UserVragenlijst(vragenlijst));

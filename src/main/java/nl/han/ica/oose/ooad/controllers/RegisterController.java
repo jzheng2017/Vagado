@@ -1,6 +1,7 @@
 package nl.han.ica.oose.ooad.controllers;
 
 import nl.han.ica.oose.ooad.enums.ControllerType;
+import nl.han.ica.oose.ooad.factories.FakeDataFactory;
 import nl.han.ica.oose.ooad.models.users.Register;
 import nl.han.ica.oose.ooad.models.users.User;
 import nl.han.ica.oose.ooad.managers.UserManager;
@@ -18,7 +19,11 @@ public class RegisterController extends Controller {
         registerView = new RegisterView(register);
         UserManager userManager = UserManager.getInstance();
         if (!register.isUsernameTaken()) {
-            userManager.add(new User(register.getUsername(), register.getPassword(), false));
+            User user = new User(register.getUsername(), register.getPassword(), false);
+            user.verhoogSaldo(100);
+            user.addVragenlijst(FakeDataFactory.getMixedVragenlijst());
+            user.addVragenlijst(FakeDataFactory.getMixedVragenlijst2());
+            userManager.add(user);
             registerView.successful();
         } else {
             registerView.taken();

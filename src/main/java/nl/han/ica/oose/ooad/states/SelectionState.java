@@ -12,7 +12,7 @@ public class SelectionState extends State {
     }
 
     @Override
-    protected void entry() {
+    public void entry() {
         quizController = (QuizController) controllerManager.getController(ControllerType.Quiz);
     }
 
@@ -28,7 +28,7 @@ public class SelectionState extends State {
     }
 
     @Override
-    protected void exit() {
+    public void exit() {
         quizController.selectionExitMessage();
     }
 }

@@ -22,7 +22,7 @@ public class QuizSelectionView extends View{
         this.vragenlijstList = vragenlijstList;
     }
 
-    public void unauthorized() {
+    public static void unauthorized() {
         System.out.println("Je mag deze actie niet uitvoeren.  Je bent niet ingelogd of je hebt geen vragenlijst(en). Je wordt terug gekeerd naar het start scherm.");
     }
 
@@ -36,5 +36,13 @@ public class QuizSelectionView extends View{
 
     public void expired() {
         System.out.println("De vragenlijst die je hebt gekozen is verlopen. Om het te kunnen spelen moet je het vernieuwen. Doe dat door het opnieuw te kopen in de winkel.");
+    }
+
+    public void leave(){
+        System.out.println("Je kan de winkel op elk moment verlaten, kies een willekeurig non numeriek karakter om de winkel te verlaten.");
+    }
+
+    public void premature() {
+        System.out.println("Je verlaat nu de quiz selectie. Je word nu terug gekeerd naar het hoofdmenu.");
     }
 }

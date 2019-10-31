@@ -63,7 +63,7 @@ public class WinkelController extends Controller {
         currentVragenlijst -= 1;
         if (currentVragenlijst >= 0 && currentVragenlijst < winkel.getVragenlijst().size()) {
             Vragenlijst vragenlijst = winkel.getVragenlijst().get(currentVragenlijst);
-            if (!User.getCurrentUser().expired(vragenlijst)) {
+            if (!User.getCurrentUser().hasVragenlijst(vragenlijst) &&!User.getCurrentUser().expired(vragenlijst)) {
                 if (User.getCurrentUser().verminderSaldo(vragenlijst.getPrijs())) {
                     User.getCurrentUser().addVragenlijst(vragenlijst);
                     winkelView.successful(vragenlijst.getPrijs(), User.getCurrentUser().getSaldo());

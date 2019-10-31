@@ -13,6 +13,11 @@ public abstract class State {
         entry();
     }
 
+    //for dependcy injection / testing purposes
+    public void setControllerManager(ControllerManager controllerManager) {
+        this.controllerManager = controllerManager;
+    }
+
     protected abstract void entry();
 
     public abstract void loop();
